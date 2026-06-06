@@ -1,4 +1,4 @@
-# Community Shared Projects
+﻿# Community Shared Projects
 
 > Last Updated: 2026-03-14
 
@@ -33,7 +33,7 @@ Each submitted project should meet at least the following:
 
 1. Include a `README.md` (overview, install, config, usage examples, FAQ)
 2. Include a `LICENSE` file (MIT / Apache-2.0 / GPL-3.0 recommended)
-3. Clearly state supported Dujiao-Next version and runtime dependencies
+3. Clearly state supported NexaCard version and runtime dependencies
 4. Be reproducible in a local environment
 5. Fill in the PR template with purpose, dependencies, and self-test results
 

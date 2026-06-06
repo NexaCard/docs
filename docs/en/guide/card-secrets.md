@@ -1,4 +1,4 @@
----
+﻿---
 outline: deep
 ---
 
@@ -6,7 +6,7 @@ outline: deep
 
 > Updated: 2026-03-28
 
-Card secrets are the core of auto-delivery products in Dujiao-Next. After a user completes payment, the system automatically assigns a card secret from inventory and displays it to the user. This guide covers importing, managing, and delivering card secrets.
+Card secrets are the core of auto-delivery products in NexaCard. After a user completes payment, the system automatically assigns a card secret from inventory and displays it to the user. This guide covers importing, managing, and delivering card secrets.
 
 ---
 

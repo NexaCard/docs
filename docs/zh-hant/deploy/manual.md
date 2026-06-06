@@ -9,16 +9,16 @@
 ## 1. 獲取源碼
 
 ```bash
-mkdir dujiao-next && cd dujiao-next
+mkdir nexacard && cd nexacard
 
 # API（主項目）
-git clone https://github.com/dujiao-next/dujiao-next.git api
+git clone https://github.com/NexaCard/API.git api
 
 # User（用戶前臺）
-git clone https://github.com/dujiao-next/user.git user
+git clone https://github.com/NexaCard/user.git user
 
 # Admin（後臺）
-git clone https://github.com/dujiao-next/admin.git admin
+git clone https://github.com/NexaCard/admin.git admin
 ```
 
 > 若你當前使用的是歷史單倉目錄（`web/`），請將下文 `user/` 替換為 `web/`。
@@ -136,7 +136,7 @@ server {
     listen 80;
     server_name user.example.com;
 
-    root /var/www/dujiao-next/user/dist;
+    root /var/www/nexacard/user/dist;
     index index.html;
 
     location / {
@@ -182,7 +182,7 @@ server {
     listen 80;
     server_name admin.example.com;
 
-    root /var/www/dujiao-next/admin/dist;
+    root /var/www/nexacard/admin/dist;
     index index.html;
 
     location / {

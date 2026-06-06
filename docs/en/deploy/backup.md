@@ -1,4 +1,4 @@
----
+﻿---
 outline: deep
 ---
 
@@ -6,7 +6,7 @@ outline: deep
 
 > Updated: 2026-03-28
 
-Regular backups are essential for safeguarding your site's data. This guide covers backup and recovery procedures for each Dujiao-Next component.
+Regular backups are essential for safeguarding your site's data. This guide covers backup and recovery procedures for each NexaCard component.
 
 ---
 

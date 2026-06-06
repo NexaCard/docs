@@ -1,8 +1,8 @@
-# Official Services
+﻿# Official Services
 
 > Updated: 2026-04-20
 
-This page describes the official technical service offerings and terms for Dujiao-Next.
+This page describes the official technical service offerings and terms for NexaCard.
 
 ## 1. Deployment Setup Service
 

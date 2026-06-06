@@ -6,7 +6,7 @@ outline: deep
 
 > Last updated: 2026-04-01
 
-This guide explains how to set up site-to-site integration (cross-selling) between Dujiao-Next instances, helping you quickly go from "applying for credentials" to "async procurement + multi-level callbacks".
+This guide explains how to set up site-to-site integration (cross-selling) between NexaCard instances, helping you quickly go from "applying for credentials" to "async procurement + multi-level callbacks".
 
 For API endpoint details and signature algorithms, see the [Open API Reference](./integration-open-api.md).
 

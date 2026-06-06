@@ -4,10 +4,10 @@
 
 ## 1. 倉庫地址
 
-- API（主項目）：https://github.com/dujiao-next/dujiao-next
-- User（用戶前臺）：https://github.com/dujiao-next/user
-- Admin（後臺）：https://github.com/dujiao-next/admin
-- Document（文檔）：https://github.com/dujiao-next/document
+- API（主項目）：https://github.com/NexaCard/API
+- User（用戶前臺）：https://github.com/NexaCard/user
+- Admin（後臺）：https://github.com/NexaCard/admin
+- Docs（文檔）：https://github.com/NexaCard/docs
 - Community Projects（社群共享專案）：https://github.com/dujiao-next/community-projects
 
 ## 2. 術語說明

@@ -1,4 +1,4 @@
----
+﻿---
 outline: deep
 ---
 
@@ -6,7 +6,7 @@ outline: deep
 
 > Updated: 2026-03-28
 
-Dujiao-Next supports a membership level system that provides exclusive pricing and discounts for users at different spending tiers. Membership levels can be upgraded automatically (based on cumulative top-ups/spending) or assigned manually by administrators.
+NexaCard supports a membership level system that provides exclusive pricing and discounts for users at different spending tiers. Membership levels can be upgraded automatically (based on cumulative top-ups/spending) or assigned manually by administrators.
 
 ---
 

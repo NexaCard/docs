@@ -1,8 +1,8 @@
-# Become a Sponsor
+﻿# Become a Sponsor
 
 > Updated: 2026-02-12
 
-Thank you for supporting the Dujiao-Next open-source project ❤️
+Thank you for supporting the NexaCard open-source project ❤️
 
 Sponsorship funds are used for:
 
@@ -45,7 +45,7 @@ Please contact the maintainer via Telegram:
 Suggested DM template:
 
 ```text
-Hi, I would like to sponsor Dujiao-Next.
+Hi, I would like to sponsor NexaCard.
 Brand name:
 Sponsorship tier: Platinum / Gold / Silver
 Landing URL:

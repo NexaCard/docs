@@ -1,8 +1,8 @@
-# Terminology Glossary
+﻿# Terminology Glossary
 
 > Updated: 2026-02-12
 
-This page standardizes core terms used across Dujiao-Next documentation to reduce ambiguity in collaboration and implementation.
+This page standardizes core terms used across NexaCard documentation to reduce ambiguity in collaboration and implementation.
 
 ## 1. Core Terms Mapping
 
@@ -25,7 +25,7 @@ This page standardizes core terms used across Dujiao-Next documentation to reduc
 
 ## 2. Naming Conventions
 
-- Project name: `Dujiao-Next`
+- Project name: `NexaCard`
 - Project short name: `D&N`
 - Frontend for end users: `User` (not `Web`)
 - Admin frontend: `Admin`
@@ -33,10 +33,10 @@ This page standardizes core terms used across Dujiao-Next documentation to reduc
 
 ## 3. Repository Mapping
 
-- API: <https://github.com/dujiao-next/dujiao-next>
-- User: <https://github.com/dujiao-next/user>
-- Admin: <https://github.com/dujiao-next/admin>
-- Document: <https://github.com/dujiao-next/document>
+- API: <https://github.com/NexaCard/API>
+- User: <https://github.com/NexaCard/user>
+- Admin: <https://github.com/NexaCard/admin>
+- Docs: <https://github.com/NexaCard/docs>
 
 ## 4. Writing Guidelines
 

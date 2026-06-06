@@ -6,7 +6,7 @@ outline: deep
 
 > Last Updated: 2026-04-01
 
-This document covers the Dujiao-Next site-to-site integration API endpoints under `/api/v1/upstream/*`.
+This document covers the NexaCard site-to-site integration API endpoints under `/api/v1/upstream/*`.
 
 ---
 

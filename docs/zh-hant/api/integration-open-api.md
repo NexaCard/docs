@@ -6,7 +6,7 @@ outline: deep
 
 > 更新時間：2026-04-01
 
-本文檔用於對接開發，覆蓋 Dujiao-Next 站點間串貨介面：`/api/v1/upstream/*`。
+本文檔用於對接開發，覆蓋 NexaCard 站點間串貨介面：`/api/v1/upstream/*`。
 
 ---
 

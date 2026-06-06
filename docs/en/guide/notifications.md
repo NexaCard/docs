@@ -1,4 +1,4 @@
----
+﻿---
 outline: deep
 ---
 
@@ -6,7 +6,7 @@ outline: deep
 
 > Updated: 2026-03-28
 
-The Dujiao-Next Notification Center supports automatic admin notifications via Email and Telegram when key business events occur.
+The NexaCard Notification Center supports automatic admin notifications via Email and Telegram when key business events occur.
 
 ---
 

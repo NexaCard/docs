@@ -1,4 +1,4 @@
-# Docker Compose 部署（Docker Hub 鏡像）
+﻿# Docker Compose 部署（Docker Hub 鏡像）
 
 > 更新時間：2026-02-27
 
@@ -13,8 +13,8 @@
 ## 2. 準備部署目錄
 
 ```bash
-mkdir -p /opt/dujiao-next/{config,data/db,data/uploads,data/logs,data/redis,data/postgres}
-cd /opt/dujiao-next
+mkdir -p /opt/nexacard/{config,data/db,data/uploads,data/logs,data/redis,data/postgres}
+cd /opt/nexacard
 
 # 關鍵：避免日誌/數據庫目錄權限不足（api 容器默認非 root 用戶）
 chmod -R 0777 ./data/logs ./data/db ./data/uploads ./data/redis ./data/postgres
@@ -34,7 +34,7 @@ chmod -R 0777 ./data/logs ./data/db ./data/uploads ./data/redis ./data/postgres
 API 容器默認讀取 `/app/config.yml`，先下載模板：
 
 ```bash
-curl -L https://raw.githubusercontent.com/dujiao-next/dujiao-next/main/config.yml.example -o ./config/config.yml
+curl -L https://raw.githubusercontent.com/NexaCard/API/main/config.yml.example -o ./config/config.yml
 ```
 
 你需要在 `./config/config.yml` 裡按方案修改數據庫與 Redis 配置。
@@ -102,7 +102,7 @@ queue:
 
 ## 4. 編寫 `.env`
 
-在 `/opt/dujiao-next/.env` 新建：
+在 `/opt/nexacard/.env` 新建：
 
 ```env
 TAG=latest

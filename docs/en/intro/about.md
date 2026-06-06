@@ -1,10 +1,10 @@
-# About Dujiao-Next
+﻿# About NexaCard
 
 > Updated: 2026-02-16  
 
 ## 1. Project positioning
 
-Dujiao-Next is an open source system for the "digital goods sales and delivery" scenario, suitable for:
+NexaCard is an open source system for the "digital goods sales and delivery" scenario, suitable for:
 
 - Digital card sales
 - Account/key product sales
@@ -38,7 +38,7 @@ Dujiao-Next is an open source system for the "digital goods sales and delivery" 
 - Operation modules such as products, orders, payments, users, articles, banners, and events
 - Visually manage site configuration
 
-## 3. Why Dujiao-Next
+## 3. Why NexaCard
 
 - **Available out of the box**: It has a complete business link, not just a demo page.
 - **Modern Technology Stack**: Both front-end and back-end technologies are easy to scale and maintain.
@@ -53,17 +53,17 @@ Dujiao-Next is an open source system for the "digital goods sales and delivery" 
 
 ## 5. Demo sites
 
-- Frontend: https://demo.dujiao-next.com
-- Admin: https://demo-admin.dujiao-next.com
+- Frontend: configure your NexaCard user domain
+- Admin: configure your NexaCard admin domain
 - Test admin account: `test`
 - Test admin password: `Test123456`
 
 ## 6. Open source repositories and contributions
 
-- API (Main Project): https://github.com/dujiao-next/dujiao-next
-- User (Frontend): https://github.com/dujiao-next/user
-- Admin (Backend): https://github.com/dujiao-next/admin
-- Document (Documentation): https://github.com/dujiao-next/document
+- API (Main Project): https://github.com/NexaCard/API
+- User (Frontend): https://github.com/NexaCard/user
+- Admin (Backend): https://github.com/NexaCard/admin
+- Docs (Documentation): https://github.com/NexaCard/docs
 - Community Projects: https://github.com/dujiao-next/community-projects
 
 If you would like to add features, fix issues, or improve the documentation, you are welcome to submit a PR directly.

@@ -1,4 +1,4 @@
----
+﻿---
 outline: deep
 ---
 
@@ -6,7 +6,7 @@ outline: deep
 
 > Updated: 2026-03-28
 
-This guide explains how to upgrade Dujiao-Next from an older version to a newer version.
+This guide explains how to upgrade NexaCard from an older version to a newer version.
 
 ---
 

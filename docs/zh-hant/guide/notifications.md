@@ -1,4 +1,4 @@
----
+﻿---
 outline: deep
 ---
 
@@ -6,7 +6,7 @@ outline: deep
 
 > 更新時間：2026-03-28
 
-Dujiao-Next 通知中心支援透過郵件和 Telegram 兩種渠道，在關鍵業務事件發生時自動通知管理員。
+NexaCard 通知中心支援透過郵件和 Telegram 兩種渠道，在關鍵業務事件發生時自動通知管理員。
 
 ---
 

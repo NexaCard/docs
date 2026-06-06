@@ -1,4 +1,4 @@
-# 單二進制部署（推薦新手）
+﻿# 單二進制部署（推薦新手）
 
 > 適用人群：完全新手，不想接觸 Docker 多容器編排，希望「一個二進制 + 一個 Redis 容器 + 一個網域」就能跑起來。
 
@@ -20,11 +20,11 @@
 
 ## 1. 下載
 
-到 [GitHub Releases](https://github.com/dujiao-next/dujiao-next/releases) 找最新的 `dujiao-all_*.tar.gz`，按系統架構選：
+到 [GitHub Releases](https://github.com/NexaCard/API/releases) 找最新的 `dujiao-all_*.tar.gz`，按系統架構選：
 
 ```bash
 # 例：Linux amd64
-wget https://github.com/dujiao-next/dujiao-next/releases/download/vX.Y.Z/dujiao-all_vX.Y.Z_linux_amd64.tar.gz
+wget https://github.com/NexaCard/API/releases/download/vX.Y.Z/dujiao-all_vX.Y.Z_linux_amd64.tar.gz
 tar -xzf dujiao-all_*.tar.gz
 cd <解壓縮目錄>
 ```
@@ -81,7 +81,7 @@ docker compose up -d redis
 
 啟動日誌會顯示：
 ```
-🚀 Dujiao-Next API 啟動中
+🚀 NexaCard API 啟動中
 ...
 Embedded SPAs: admin (/dj-mgmt-7x9k2), user (/)
 ```
@@ -132,7 +132,7 @@ sudo chown -R dujiao:dujiao /opt/dujiao
 `/etc/systemd/system/dujiao.service`：
 ```ini
 [Unit]
-Description=Dujiao-Next Fullstack
+Description=NexaCard Fullstack
 After=network.target
 
 [Service]

@@ -4,10 +4,10 @@
 
 ## 1. Repository Links
 
-- API (Main Project): https://github.com/dujiao-next/dujiao-next
-- User (Frontend): https://github.com/dujiao-next/user
-- Admin (Backend): https://github.com/dujiao-next/admin
-- Document (Documentation): https://github.com/dujiao-next/document
+- API (Main Project): https://github.com/NexaCard/API
+- User (Frontend): https://github.com/NexaCard/user
+- Admin (Backend): https://github.com/NexaCard/admin
+- Docs (Documentation): https://github.com/NexaCard/docs
 - Community Projects: https://github.com/dujiao-next/community-projects
 
 ## 2. Terminology

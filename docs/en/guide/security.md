@@ -1,4 +1,4 @@
----
+﻿---
 outline: deep
 ---
 
@@ -6,7 +6,7 @@ outline: deep
 
 > Updated: 2026-03-28
 
-This guide covers security configuration recommendations for Dujiao-Next in production environments.
+This guide covers security configuration recommendations for NexaCard in production environments.
 
 ---
 

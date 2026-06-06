@@ -1,10 +1,10 @@
-# 关于 Dujiao-Next
+﻿# 关于 NexaCard
 
 > 更新时间：2026-02-16  
 
 ## 1. 项目定位
 
-Dujiao-Next 是一套面向「数字商品销售与交付」场景的开源系统，适用于：
+NexaCard 是一套面向「数字商品销售与交付」场景的开源系统，适用于：
 
 - 数字卡密售卖
 - 账号/密钥类商品销售
@@ -38,7 +38,7 @@ Dujiao-Next 是一套面向「数字商品销售与交付」场景的开源系�
 - 商品、订单、支付、用户、文章、Banner、活动等运营模块
 - 可视化管理站点配置
 
-## 3. 为什么选择 Dujiao-Next
+## 3. 为什么选择 NexaCard
 
 - **开箱可用**：具备完整业务链路，不是只有 Demo 页面。
 - **技术栈现代**：前后端技术都易于扩展维护。
@@ -54,17 +54,17 @@ Dujiao-Next 是一套面向「数字商品销售与交付」场景的开源系�
 
 ## 5. Demo 站点
 
-- 前台：https://demo.dujiao-next.com
-- 后台：https://demo-admin.dujiao-next.com
+- 前台：配置你自己的 NexaCard 用户端域名
+- 后台：配置你自己的 NexaCard 管理后台域名
 - 后台测试管理员账号：`test`
 - 后台测试管理员密码：`Test123456`
 
 ## 6. 开源仓库与贡献
 
-- API（主项目）：https://github.com/dujiao-next/dujiao-next
-- User（用户前台）：https://github.com/dujiao-next/user
-- Admin（后台）：https://github.com/dujiao-next/admin
-- Document（文档）：https://github.com/dujiao-next/document
+- API（主项目）：https://github.com/NexaCard/API
+- User（用户前台）：https://github.com/NexaCard/user
+- Admin（后台）：https://github.com/NexaCard/admin
+- Docs（文档）：https://github.com/NexaCard/docs
 - Community Projects（社区共享项目）：https://github.com/dujiao-next/community-projects
 
 如果你希望补充功能、修复问题或改进文档，欢迎直接提交 PR。

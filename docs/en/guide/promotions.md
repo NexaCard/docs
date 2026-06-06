@@ -1,4 +1,4 @@
----
+﻿---
 outline: deep
 ---
 
@@ -6,7 +6,7 @@ outline: deep
 
 > Updated: 2026-03-28
 
-Dujiao-Next provides two promotional mechanisms: **Coupons** (manually entered by users) and **Activity Pricing** (automatically applied when conditions are met). Both can be stacked with membership level discounts.
+NexaCard provides two promotional mechanisms: **Coupons** (manually entered by users) and **Activity Pricing** (automatically applied when conditions are met). Both can be stacked with membership level discounts.
 
 ---
 

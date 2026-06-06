@@ -14,10 +14,10 @@ This document covers all current frontend APIs in `user/src/api/index.ts`, with 
 
 ## Open Source Repository Links
 
-- API (Main Project): https://github.com/dujiao-next/dujiao-next
-- User (Frontend): https://github.com/dujiao-next/user
-- Admin (Backend): https://github.com/dujiao-next/admin
-- Document (Documentation): https://github.com/dujiao-next/document
+- API (Main Project): https://github.com/NexaCard/API
+- User (Frontend): https://github.com/NexaCard/user
+- Admin (Backend): https://github.com/NexaCard/admin
+- Docs (Documentation): https://github.com/NexaCard/docs
 
 ---
 
@@ -448,7 +448,7 @@ None
       "telegram": "https://t.me/dujiaostudio",
       "whatsapp": "https://wa.me/1234567890"
     },
-    "site_name": "Dujiao-Next",
+    "site_name": "NexaCard",
     "scripts": [
       {
         "name": "Plausible",

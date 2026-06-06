@@ -2,23 +2,25 @@
 layout: home
 
 hero:
-  name: "獨角Dujiao-Next"
-  text: "擁抱現代化開源數字商品銷售系統"
-  tagline: "前後臺分離 · 高性能架構 · 開源社區支持"
+  name: "NexaCard"
+  text: "面向數字商品銷售與自動交付的開源系統"
+  tagline: "電光藍品牌界面 · 前後端分離架構 · 深淺主題友好"
+  image:
+    src: /nx.svg
+    alt: NexaCard
   actions:
     - theme: brand
       text: 快速開始
       link: /zh-hant/intro/about
     - theme: alt
-      text: 加入交流群
-      link: http://t.me/dujiaonext_official
+      text: 查看部署
+      link: /zh-hant/deploy/
 
 features:
   - title: 完整業務閉環
-    details: 覆蓋商品、訂單、支付、交付、用戶中心、後臺管理等核心流程。
-  - title: 多支付接入
-    details: 支持支付寶、微信、PayPal、Stripe 等渠道，統一支付抽象與回調處理。
-  - title: 可擴展可維護
-    details: API/User/Admin 三端分層清晰，便於二開與替換前臺模板。
+    details: 覆蓋商品、訂單、支付、交付、用戶中心與後台營運等核心流程。
+  - title: 多端分層清晰
+    details: API、User、Admin、Docs 獨立維護，適合伺服器部署和後續二次開發。
+  - title: 品牌化 UI 起點
+    details: 使用 NexaCard 的暗黑科技視覺語言，同時保持淺色主題可讀性。
 ---
-

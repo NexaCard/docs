@@ -1,8 +1,8 @@
-# Telegram Bot Service Overview
+﻿# Telegram Bot Service Overview
 
 > Updated: 2026-04-20
 
-Telegram Bot is an independent Dujiao-Next extension that extends your site capabilities into Telegram scenarios. It is suitable for sites that need private-domain reach, message notifications, quick entry points, and operational broadcasts.
+Telegram Bot is an independent NexaCard extension that extends your site capabilities into Telegram scenarios. It is suitable for sites that need private-domain reach, message notifications, quick entry points, and operational broadcasts.
 
 > Note: this page describes the standalone Telegram Bot feature, not the Telegram login settings in system configuration.
 

@@ -1,4 +1,4 @@
----
+﻿---
 outline: deep
 ---
 
@@ -6,7 +6,7 @@ outline: deep
 
 > Updated: 2026-03-28
 
-Dujiao-Next includes a built-in affiliate program that allows users to invite others to purchase through referral links and earn commissions. The system supports automatic attribution, commission calculation, a confirmation period mechanism, and withdrawal review.
+NexaCard includes a built-in affiliate program that allows users to invite others to purchase through referral links and earn commissions. The system supports automatic attribution, commission calculation, a confirmation period mechanism, and withdrawal review.
 
 ---
 

@@ -1,14 +1,13 @@
-# Dujiao-Next Documentation
+# NexaCard Documentation
 
-This repository contains the official documentation site for **Dujiao-Next**, built with **VitePress**.
+This repository contains the official documentation site for **NexaCard**, built with **VitePress**.
 
 ## Website
 
-- Production docs: https://dujiao-next.com
-- GitHub (docs): https://github.com/dujiao-next/document
-- GitHub (main API project): https://github.com/dujiao-next/dujiao-next
-- GitHub (user frontend): https://github.com/dujiao-next/user
-- GitHub (admin frontend): https://github.com/dujiao-next/admin
+- GitHub (docs): https://github.com/NexaCard/docs
+- GitHub (main API project): https://github.com/NexaCard/API
+- GitHub (user frontend): https://github.com/NexaCard/user
+- GitHub (admin frontend): https://github.com/NexaCard/admin
 
 ## Tech Stack
 
@@ -37,13 +36,13 @@ The static files will be generated in `docs/.vitepress/dist`.
 Build image:
 
 ```bash
-docker build -t dujiaonext/docs:latest .
+docker build -t nexacard/docs:latest .
 ```
 
 Run container:
 
 ```bash
-docker run --rm -p 8082:80 dujiaonext/docs:latest
+docker run --rm -p 8082:80 nexacard/docs:latest
 ```
 
 Then open `http://localhost:8082`.

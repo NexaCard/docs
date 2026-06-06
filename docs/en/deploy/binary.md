@@ -1,4 +1,4 @@
-# Single Binary Deployment (Recommended for Beginners)
+﻿# Single Binary Deployment (Recommended for Beginners)
 
 > Who this is for: Complete beginners who don't want to deal with multi-container Docker orchestration and prefer to run everything with "one binary + one Redis container + one domain".
 
@@ -20,11 +20,11 @@
 
 ## 1. Download
 
-Go to [GitHub Releases](https://github.com/dujiao-next/dujiao-next/releases) and find the latest `dujiao-all_*.tar.gz`. Pick the one matching your system architecture:
+Go to [GitHub Releases](https://github.com/NexaCard/API/releases) and find the latest `dujiao-all_*.tar.gz`. Pick the one matching your system architecture:
 
 ```bash
 # Example: Linux amd64
-wget https://github.com/dujiao-next/dujiao-next/releases/download/vX.Y.Z/dujiao-all_vX.Y.Z_linux_amd64.tar.gz
+wget https://github.com/NexaCard/API/releases/download/vX.Y.Z/dujiao-all_vX.Y.Z_linux_amd64.tar.gz
 tar -xzf dujiao-all_*.tar.gz
 cd <extracted-directory>
 ```
@@ -81,7 +81,7 @@ If you already have Redis running (as a system service or another container), ju
 
 The startup log will show:
 ```
-🚀 Dujiao-Next API 启动中
+🚀 NexaCard API 启动中
 ...
 Embedded SPAs: admin (/dj-mgmt-7x9k2), user (/)
 ```
@@ -132,7 +132,7 @@ sudo chown -R dujiao:dujiao /opt/dujiao
 `/etc/systemd/system/dujiao.service`:
 ```ini
 [Unit]
-Description=Dujiao-Next Fullstack
+Description=NexaCard Fullstack
 After=network.target
 
 [Service]

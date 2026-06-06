@@ -1,8 +1,8 @@
-# 术语统一表
+﻿# 术语统一表
 
 > 更新时间：2026-02-12
 
-本页用于统一 Dujiao-Next 文档中的中英文术语，降低沟通与协作成本。
+本页用于统一 NexaCard 文档中的中英文术语，降低沟通与协作成本。
 
 ## 1. 核心术语对照
 
@@ -25,7 +25,7 @@
 
 ## 2. 项目命名约定
 
-- 项目总称统一为：`Dujiao-Next`
+- 项目总称统一为：`NexaCard`
 - 项目简称统一为：`D&N`
 - 用户端命名统一为：`User`（不再使用 `Web`）
 - 管理端命名统一为：`Admin`
@@ -33,10 +33,10 @@
 
 ## 3. 链接与仓库命名
 
-- API：<https://github.com/dujiao-next/dujiao-next>
-- User：<https://github.com/dujiao-next/user>
-- Admin：<https://github.com/dujiao-next/admin>
-- Document：<https://github.com/dujiao-next/document>
+- API：<https://github.com/NexaCard/API>
+- User：<https://github.com/NexaCard/user>
+- Admin：<https://github.com/NexaCard/admin>
+- Docs：<https://github.com/NexaCard/docs>
 
 ## 4. 文档编写建议
 

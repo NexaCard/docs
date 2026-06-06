@@ -1,4 +1,4 @@
----
+﻿---
 outline: deep
 ---
 
@@ -6,7 +6,7 @@ outline: deep
 
 > Updated: 2026-03-28
 
-Dujiao-Next includes a built-in wallet system. Users can top up their wallet balance via multiple payment methods, pay for orders using their balance, or redeem gift cards to add funds. Administrators can manually adjust user balances or refund orders to wallets.
+NexaCard includes a built-in wallet system. Users can top up their wallet balance via multiple payment methods, pay for orders using their balance, or redeem gift cards to add funds. Administrators can manually adjust user balances or refund orders to wallets.
 
 ---
 

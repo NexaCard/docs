@@ -1,4 +1,4 @@
-# 使用 aaPanel 手動部署（基於 Releases 壓縮包）
+﻿# 使用 aaPanel 手動部署（基於 Releases 壓縮包）
 
 > 更新時間：2026-02-27
 
@@ -27,17 +27,17 @@
 ## 2. 準備目錄
 
 ```bash
-mkdir -p /www/wwwroot/dujiao-next/{api,user,admin}
-cd /www/wwwroot/dujiao-next
+mkdir -p /www/wwwroot/nexacard/{api,user,admin}
+cd /www/wwwroot/nexacard
 ```
 
 ## 3. 下載並解壓 Release 包
 
 請從以下倉庫的 Releases 下載對應版本壓縮包（建議三端使用同一版本號）：
 
-- API（主項目）：`https://github.com/dujiao-next/dujiao-next/releases`
-- User（用戶前臺）：`https://github.com/dujiao-next/user/releases`
-- Admin（後臺）：`https://github.com/dujiao-next/admin/releases`
+- API（主項目）：`https://github.com/NexaCard/API/releases`
+- User（用戶前臺）：`https://github.com/NexaCard/user/releases`
+- Admin（後臺）：`https://github.com/NexaCard/admin/releases`
 
 示例（文件名按你的實際 Release 產物替換）：
 
@@ -47,19 +47,19 @@ cd /www/wwwroot/dujiao-next
 
 ```bash
 # API
-wget -O api.tar.gz https://github.com/dujiao-next/dujiao-next/releases/download/v1.0.0/dujiao-next_v1.0.0_Linux_x86_64.tar.gz
+wget -O api.tar.gz https://github.com/NexaCard/API/releases/download/v1.0.0/dujiao-next_v1.0.0_Linux_x86_64.tar.gz
 mkdir -p api && tar -xzf api.tar.gz -C api
 
 # User
-wget -O user.zip https://github.com/dujiao-next/user/releases/download/v1.0.0/dujiao-next-user-v1.0.0.zip
+wget -O user.zip https://github.com/NexaCard/user/releases/download/v1.0.0/dujiao-next-user-v1.0.0.zip
 mkdir -p user && unzip -o user.zip -d user
 
 # Admin
-wget -O admin.zip https://github.com/dujiao-next/admin/releases/download/v1.0.0/dujiao-next-admin-v1.0.0.zip
+wget -O admin.zip https://github.com/NexaCard/admin/releases/download/v1.0.0/dujiao-next-admin-v1.0.0.zip
 mkdir -p admin && unzip -o admin.zip -d admin
 ```
 
-> API 壓縮包解壓後，`/www/wwwroot/dujiao-next/api` 目錄中應包含：
+> API 壓縮包解壓後，`/www/wwwroot/nexacard/api` 目錄中應包含：
 > - `config.yml.example`
 > - `dujiao-next`
 > - `README.md`
@@ -70,7 +70,7 @@ mkdir -p admin && unzip -o admin.zip -d admin
 確認 API 解壓目錄中存在以下文件：`config.yml.example`、`dujiao-next`、`README.md`。
 
 ```bash
-cd /www/wwwroot/dujiao-next/api
+cd /www/wwwroot/nexacard/api
 cp config.yml.example config.yml
 # 編輯 config.yml
 chmod +x ./dujiao-next
@@ -88,13 +88,13 @@ chmod +x ./dujiao-next
 > - `DJ_DEFAULT_ADMIN_PASSWORD=<你的強密碼>`
 
 ```bash
-/www/wwwroot/dujiao-next/api/dujiao-next
+/www/wwwroot/nexacard/api/dujiao-next
 ```
 
 工作目錄設置為：
 
 ```text
-/www/wwwroot/dujiao-next/api
+/www/wwwroot/nexacard/api
 ```
 
 ### 4.1 默認後臺管理員賬號（首次初始化）
@@ -125,8 +125,8 @@ API 首次啟動時會讀取該配置完成管理員初始化。
 
 建議目錄：
 
-- User 站點根目錄：`/www/wwwroot/dujiao-next/user/dist`
-- Admin 站點根目錄：`/www/wwwroot/dujiao-next/admin/dist`
+- User 站點根目錄：`/www/wwwroot/nexacard/user/dist`
+- Admin 站點根目錄：`/www/wwwroot/nexacard/admin/dist`
 
 ## 6. 在 aaPanel 創建站點
 
@@ -154,7 +154,7 @@ server {
     listen 80;
     server_name shop.example.com;
 
-    root /www/wwwroot/dujiao-next/user/dist;
+    root /www/wwwroot/nexacard/user/dist;
     index index.html;
 
     location / {
@@ -200,7 +200,7 @@ server {
     listen 80;
     server_name admin.example.com;
 
-    root /www/wwwroot/dujiao-next/admin/dist;
+    root /www/wwwroot/nexacard/admin/dist;
     index index.html;
 
     location / {

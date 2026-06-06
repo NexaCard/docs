@@ -1,4 +1,4 @@
----
+﻿---
 outline: deep
 ---
 
@@ -6,7 +6,7 @@ outline: deep
 
 > Updated: 2026-03-28
 
-This guide introduces the core features and workflows of the Dujiao-Next admin panel, helping administrators get started with day-to-day operations quickly.
+This guide introduces the core features and workflows of the NexaCard admin panel, helping administrators get started with day-to-day operations quickly.
 
 ---
 

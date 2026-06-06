@@ -1,4 +1,4 @@
-# Manually Deploy Using aaPanel (Based on Releases Archive)
+﻿# Manually Deploy Using aaPanel (Based on Releases Archive)
 
 > Last Updated: 2026-02-27
 
@@ -27,16 +27,16 @@ Install in aaPanel:
 ## 2. Prepare Directories
 
 ```bash
-mkdir -p /www/wwwroot/dujiao-next/{api,user,admin}
-cd /www/wwwroot/dujiao-next
+mkdir -p /www/wwwroot/nexacard/{api,user,admin}
+cd /www/wwwroot/nexacard
 ```
 ## 3. Download and Extract the Release Package
 
 Please download the corresponding version package from the Releases of the following repositories (it is recommended that all three ends use the same version number):
 
-- API (main project): `https://github.com/dujiao-next/dujiao-next/releases`
-- User (user front-end): `https://github.com/dujiao-next/user/releases`
-- Admin (back-end): `https://github.com/dujiao-next/admin/releases`
+- API (main project): `https://github.com/NexaCard/API/releases`
+- User (user front-end): `https://github.com/NexaCard/user/releases`
+- Admin (back-end): `https://github.com/NexaCard/admin/releases`
 
 Example (replace the file name with your actual Release artifact):
 
@@ -46,18 +46,18 @@ Example (replace the file name with your actual Release artifact):
 
 ```bash
 # API
-wget -O api.tar.gz https://github.com/dujiao-next/dujiao-next/releases/download/v1.0.0/dujiao-next_v1.0.0_Linux_x86_64.tar.gz
+wget -O api.tar.gz https://github.com/NexaCard/API/releases/download/v1.0.0/dujiao-next_v1.0.0_Linux_x86_64.tar.gz
 mkdir -p api && tar -xzf api.tar.gz -C api
 
 # User
-wget -O user.zip https://github.com/dujiao-next/user/releases/download/v1.0.0/dujiao-next-user-v1.0.0.zip
+wget -O user.zip https://github.com/NexaCard/user/releases/download/v1.0.0/dujiao-next-user-v1.0.0.zip
 mkdir -p user && unzip -o user.zip -d user
 
 # Admin
-wget -O admin.zip https://github.com/dujiao-next/admin/releases/download/v1.0.0/dujiao-next-admin-v1.0.0.zip
+wget -O admin.zip https://github.com/NexaCard/admin/releases/download/v1.0.0/dujiao-next-admin-v1.0.0.zip
 mkdir -p admin && unzip -o admin.zip -d admin
 ```
-> After extracting the API package, the `/www/wwwroot/dujiao-next/api` directory should contain:
+> After extracting the API package, the `/www/wwwroot/nexacard/api` directory should contain:
 > - `config.yml.example`
 > - `dujiao-next`
 > - `README.md`
@@ -67,7 +67,7 @@ mkdir -p admin && unzip -o admin.zip -d admin
 Make sure the API extraction directory contains the following files: `config.yml.example`, `dujiao-next`, `README.md`.
 
 ```bash
-cd /www/wwwroot/dujiao-next/api
+cd /www/wwwroot/nexacard/api
 cp config.yml.example config.yml
 # Edit config.yml
 chmod +x ./dujiao-next
@@ -84,12 +84,12 @@ Add the startup command in aaPanel's PM2/Supervisor:
 > - `DJ_DEFAULT_ADMIN_PASSWORD=<your strong password>`
 
 ```bash
-/www/wwwroot/dujiao-next/api/dujiao-next
+/www/wwwroot/nexacard/api/dujiao-next
 ```
 The working directory is set to:
 
 ```text
-/www/wwwroot/dujiao-next/api
+/www/wwwroot/nexacard/api
 ```
 ### 4.1 Default Back-End Admin Account (First Initialization)
 
@@ -119,8 +119,8 @@ if it is a ZIP package, please unzip it first and confirm that `user/dist` and `
 
 Recommended directories:
 
-- User site root: `/www/wwwroot/dujiao-next/user/dist`
-- Admin site root: `/www/wwwroot/dujiao-next/admin/dist`
+- User site root: `/www/wwwroot/nexacard/user/dist`
+- Admin site root: `/www/wwwroot/nexacard/admin/dist`
 
 ## 6. Creating Sites in aaPanel
 
@@ -148,7 +148,7 @@ server {
     listen 80;
     server_name shop.example.com;
 
-    root /www/wwwroot/dujiao-next/user/dist;
+    root /www/wwwroot/nexacard/user/dist;
     index index.html;
 
     location / {
@@ -195,7 +195,7 @@ server {
     listen 80;
     server_name admin.example.com;
 
-    root /www/wwwroot/dujiao-next/admin/dist;
+    root /www/wwwroot/nexacard/admin/dist;
     index index.html;
 
     location / {

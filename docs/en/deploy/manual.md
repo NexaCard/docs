@@ -9,16 +9,16 @@ This document is intended for developers who want full control over the deployme
 ## 1. Obtaining the Source Code
 
 ```bash
-mkdir dujiao-next && cd dujiao-next
+mkdir nexacard && cd nexacard
 
 # API (main repository)
-git clone https://github.com/dujiao-next/dujiao-next.git api
+git clone https://github.com/NexaCard/API.git api
 
 # User (frontend)
-git clone https://github.com/dujiao-next/user.git user
+git clone https://github.com/NexaCard/user.git user
 
 # Admin (admin panel)
-git clone https://github.com/dujiao-next/admin.git admin
+git clone https://github.com/NexaCard/admin.git admin
 ```
 > If you are currently using the legacy single-repository directory (`web/`), please replace `user/` below with `web/`.
 
@@ -129,7 +129,7 @@ server {
     listen 80;
     server_name user.example.com;
 
-    root /var/www/dujiao-next/user/dist;
+    root /var/www/nexacard/user/dist;
     index index.html;
 
     location / {
@@ -176,7 +176,7 @@ server {
     listen 80;
     server_name admin.example.com;
 
-    root /var/www/dujiao-next/admin/dist;
+    root /var/www/nexacard/admin/dist;
     index index.html;
 
     location / {

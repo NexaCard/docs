@@ -1,8 +1,8 @@
-# Telegram Bot 服务介绍
+﻿# Telegram Bot 服务介绍
 
 > 更新时间：2026-04-20
 
-Telegram Bot 是 Dujiao-Next 的独立扩展功能，用于把站点能力延伸到 Telegram 场景，适合需要私域触达、消息通知、快捷入口和运营群发的站点。
+Telegram Bot 是 NexaCard 的独立扩展功能，用于把站点能力延伸到 Telegram 场景，适合需要私域触达、消息通知、快捷入口和运营群发的站点。
 
 > 注意：这里介绍的是独立的 Telegram Bot 功能，不是系统设置中的 Telegram 登录配置。
 

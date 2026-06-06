@@ -1,4 +1,4 @@
-# Docker Compose Deployment (Docker Hub Images)
+﻿# Docker Compose Deployment (Docker Hub Images)
 
 > Last Updated: 2026-02-27
 
@@ -13,8 +13,8 @@ If you have not chosen a deployment method yet, start with [Deployment Overview 
 ## 2. Prepare Deployment Directory
 
 ```bash
-mkdir -p /opt/dujiao-next/{config,data/db,data/uploads,data/logs,data/redis,data/postgres}
-cd /opt/dujiao-next
+mkdir -p /opt/nexacard/{config,data/db,data/uploads,data/logs,data/redis,data/postgres}
+cd /opt/nexacard
 
 # Important: avoid permission issues on log/database directories (API container runs as non-root by default)
 chmod -R 0777 ./data/logs ./data/db ./data/uploads ./data/redis ./data/postgres
@@ -33,7 +33,7 @@ Directory Description:
 The API container reads `/app/config.yml` by default. First, download the template:
 
 ```bash
-curl -L https://raw.githubusercontent.com/dujiao-next/dujiao-next/main/config.yml.example -o ./config/config.yml
+curl -L https://raw.githubusercontent.com/NexaCard/API/main/config.yml.example -o ./config/config.yml
 ```
 You need to modify the database and Redis configuration in `./config/config.yml` according to the plan.
 
@@ -98,7 +98,7 @@ queue:
 ```
 ## 4. Create `.env`
 
-Create a new file at `/opt/dujiao-next/.env`:
+Create a new file at `/opt/nexacard/.env`:
 
 ```env
 TAG=latest
