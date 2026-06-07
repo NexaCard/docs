@@ -70,7 +70,7 @@ go run ./cmd/seed
 當數據庫中 `admins` 表為空時，系統會在 API 首次啟動時嘗試創建默認管理員：
 
 - 默認賬號：`admin`
-- 默認密碼：`admin123`
+- 默認密碼：請使用 `NEXACARD_DEFAULT_ADMIN_PASSWORD` 設置強密碼
 
 > 強烈建議：首次登錄後臺後，立刻在“後臺 -> 修改密碼”中更換為強密碼。
 
@@ -79,7 +79,7 @@ go run ./cmd/seed
 - 你可以在啟動 API 前設置環境變量覆蓋默認值：
   - `NEXACARD_DEFAULT_ADMIN_USERNAME`
   - `NEXACARD_DEFAULT_ADMIN_PASSWORD`
-- 若 `server.mode=release` 且未設置 `NEXACARD_DEFAULT_ADMIN_PASSWORD`，系統會跳過默認管理員初始化（不會自動創建 `admin/admin123`）。
+- 若 `server.mode=release` 且未設置 `NEXACARD_DEFAULT_ADMIN_PASSWORD`，系統會跳過默認管理員初始化（不會自動創建弱默認管理員帳號）。
 
 ## 3. 用戶前臺 User 部署
 

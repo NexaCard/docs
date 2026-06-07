@@ -281,7 +281,7 @@ Additional notes:
 Additional notes:
 
 - The default admin is only created when the `admins` table is empty.
-- Priority: `NEXACARD_DEFAULT_ADMIN_USERNAME` / `NEXACARD_DEFAULT_ADMIN_PASSWORD` (environment variables) > `bootstrap.default_admin_username` / `bootstrap.default_admin_password` (`config.yml`) > system defaults.
+- Priority: `NEXACARD_DEFAULT_ADMIN_USERNAME` / `NEXACARD_DEFAULT_ADMIN_PASSWORD` (environment variables) > `bootstrap.default_admin_username` / `bootstrap.default_admin_password` (`config.yml`). If no password is provided, no default admin is created.
 - Compatibility: legacy `DJ_DEFAULT_ADMIN_USERNAME` / `DJ_DEFAULT_ADMIN_PASSWORD` variables are still read as fallbacks, but new deployments should use `NEXACARD_DEFAULT_ADMIN_*`.
 - In `release` mode, if no admin password is provided in either environment variables or `config.yml`, default admin initialization will be skipped.
 

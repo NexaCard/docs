@@ -102,7 +102,7 @@ chmod +x ./nexacard
 當數據庫中 `admins` 表為空時，API 首次啟動會嘗試創建默認管理員：
 
 - 默認賬號：`admin`
-- 默認密碼：`admin123`
+- 默認密碼：請使用 `NEXACARD_DEFAULT_ADMIN_PASSWORD` 設置強密碼
 
 > 強烈建議：首次登錄後臺後立即修改密碼。
 

@@ -96,7 +96,7 @@ The working directory is set to:
 When the `admins` table in the database is empty, the API will attempt to create a default admin account on first startup:
 
 - Default username: `admin`
-- Default password: `admin123`
+- Default password: set a strong password with `NEXACARD_DEFAULT_ADMIN_PASSWORD`
 
 > Strongly recommended: Change the password immediately after the first login to the admin panel.
 

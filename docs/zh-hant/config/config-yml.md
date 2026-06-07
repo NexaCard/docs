@@ -284,7 +284,7 @@ database:
 補充：
 
 - 僅當數據庫 `admins` 表為空時，首次啟動才會嘗試創建默認管理員。
-- 優先級：`NEXACARD_DEFAULT_ADMIN_USERNAME` / `NEXACARD_DEFAULT_ADMIN_PASSWORD`（環境變量） > `bootstrap.default_admin_username` / `bootstrap.default_admin_password`（`config.yml`） > 系統默認值。
+- 優先級：`NEXACARD_DEFAULT_ADMIN_USERNAME` / `NEXACARD_DEFAULT_ADMIN_PASSWORD`（環境變量） > `bootstrap.default_admin_username` / `bootstrap.default_admin_password`（`config.yml`）。未提供密碼時不會創建默認管理員。
 - 歷史兼容：舊變量 `DJ_DEFAULT_ADMIN_USERNAME` / `DJ_DEFAULT_ADMIN_PASSWORD` 仍可作為回退讀取，但新部署應使用 `NEXACARD_DEFAULT_ADMIN_*`。
 - 若運行在 `release` 模式且環境變量與 `config.yml` 都未提供管理員密碼，系統會跳過默認管理員初始化。
 

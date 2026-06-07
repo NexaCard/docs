@@ -65,7 +65,7 @@ Default listening: `http://0.0.0.0:8080`
 When the `admins` table in the database is empty, the system will attempt to create a default admin the first time the API starts:
 
 - Default username: `admin`
-- Default password: `admin123`
+- Default password: set a strong password with `NEXACARD_DEFAULT_ADMIN_PASSWORD`
 
 > Strongly recommended: After logging into the admin panel for the first time, immediately change to a strong password under "Admin -> Change Password".
 
@@ -74,7 +74,7 @@ Notes:
 - You can override the default values by setting environment variables before starting the API:
   - `NEXACARD_DEFAULT_ADMIN_USERNAME`
   - `NEXACARD_DEFAULT_ADMIN_PASSWORD`
-- If `server.mode=release` and `NEXACARD_DEFAULT_ADMIN_PASSWORD` is not set, the system will skip default admin initialization (it will not automatically create `admin/admin123`).
+- If `server.mode=release` and `NEXACARD_DEFAULT_ADMIN_PASSWORD` is not set, the system will skip default admin initialization (it will not automatically create a weak default admin account).
 
 ## 3. User Frontend Deployment
 

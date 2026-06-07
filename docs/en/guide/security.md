@@ -1,4 +1,4 @@
-﻿---
+---
 outline: deep
 ---
 
@@ -149,7 +149,7 @@ cors:
   max_age: 600
 ```
 
-**Note:** The default `allowed_origins` is `["*"]` (all origins allowed). This must be changed for production.
+**Note:** `release` mode refuses to start with `allowed_origins: ["*"]`; configure the actual storefront and admin origins before production.
 
 ---
 

@@ -104,7 +104,7 @@ queue:
 
 在 `/opt/nexacard/.env` 新建：
 
-```env
+```dotenv
 TAG=latest
 TZ=Asia/Shanghai
 
@@ -114,7 +114,7 @@ ADMIN_PORT=8082
 
 # 默認管理員（僅首次初始化時生效）
 NEXACARD_DEFAULT_ADMIN_USERNAME=admin
-NEXACARD_DEFAULT_ADMIN_PASSWORD=admin123
+NEXACARD_DEFAULT_ADMIN_PASSWORD=<your-strong-password>
 
 # Redis
 REDIS_PASSWORD=your-strong-redis-password
@@ -442,7 +442,7 @@ docker compose --env-file .env -f docker-compose.sqlite.yml down
 當數據庫中 `admins` 表為空，且 API 首次啟動時，會使用以下默認管理員：
 
 - 默認賬號：`admin`
-- 默認密碼：`admin123`
+- 默認密碼：請使用 `NEXACARD_DEFAULT_ADMIN_PASSWORD` 設置強密碼
 
 > 強烈建議：首次登錄後臺後立即修改密碼。
 

@@ -100,7 +100,7 @@ queue:
 
 Create a new file at `/opt/nexacard/.env`:
 
-```env
+```dotenv
 TAG=latest
 TZ=Asia/Shanghai
 
@@ -110,7 +110,7 @@ ADMIN_PORT=8082
 
 # Default admin account (only effective during first-time initialization)
 NEXACARD_DEFAULT_ADMIN_USERNAME=admin
-NEXACARD_DEFAULT_ADMIN_PASSWORD=admin123
+NEXACARD_DEFAULT_ADMIN_PASSWORD=<your-strong-password>
 
 # Redis
 REDIS_PASSWORD=your-strong-redis-password
@@ -432,7 +432,7 @@ docker compose --env-file .env -f docker-compose.sqlite.yml down
 When the `admins` table in the database is empty and the API is started for the first time, the following default admin account will be used:
 
 - Default username: `admin`
-- Default password: `admin123`
+- Default password: set a strong password with `NEXACARD_DEFAULT_ADMIN_PASSWORD`
 
 > Strongly recommended: Change the password immediately after the first login.
 
