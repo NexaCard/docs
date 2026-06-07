@@ -1,4 +1,4 @@
-# `config.yml` 詳細解釋與推薦配置
+﻿# `config.yml` 詳細解釋與推薦配置
 
 > 更新時間：2026-03-28
 
@@ -30,7 +30,7 @@
 ```yaml
 server:
   host: 0.0.0.0
-  port: 8080
+  port: 5175
   mode: debug
 
 log:
@@ -73,7 +73,7 @@ SQLite 重點提醒：
 ```yaml
 server:
   host: 0.0.0.0
-  port: 8080
+  port: 5175
   mode: release
 
 log:
@@ -164,7 +164,7 @@ database:
 | 字段 | 類型 | 預設值 | 說明 | 推薦 |
 | --- | --- | --- | --- | --- |
 | `host` | string | `0.0.0.0` | 監聽地址 | `0.0.0.0` |
-| `port` | string | `8080` | 服務端口 | `8080` |
+| `port` | string | `5175` | 服務端口 | `5175` |
 | `mode` | string | `debug` | 運行模式：`debug`/`release` | 生產用 `release` |
 
 ## 5.2 `log`

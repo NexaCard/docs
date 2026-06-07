@@ -1,4 +1,4 @@
-﻿# Single Binary Deployment (Recommended for Beginners)
+# Single Binary Deployment (Recommended for Beginners)
 
 > Who this is for: Complete beginners who don't want to deal with multi-container Docker orchestration and prefer to run everything with "one binary + one Redis container + one domain".
 
@@ -43,7 +43,7 @@ Open `config.yml` and update the fields below:
 |---|---|---|
 | `jwt.secret` | Admin JWT secret. **Must change** | Output of `openssl rand -hex 32` |
 | `user_jwt.secret` | User JWT secret. **Must change** | Same as above, but a different value |
-| `web.admin_path` | Admin URL prefix. **Strongly recommended to change** | `/dj-mgmt-7x9k2` |
+| `web.admin_path` | Admin URL prefix. **Strongly recommended to change** | `/nexa-console-7x9k2` |
 | `redis.host` / `redis.port` | Redis address (two fields, default `127.0.0.1` + `6379`) | `127.0.0.1` + `6379` |
 | `database.driver` / `database.dsn` | Database (defaults to SQLite) | See below |
 
@@ -53,7 +53,7 @@ The default value `/admin` is the number-one target for automated scanners. **St
 
 ```yaml
 web:
-  admin_path: "/dj-mgmt-7x9k2"   # A string of your choosing
+  admin_path: "/nexa-console-7x9k2"   # A string of your choosing
 ```
 
 This path is just the "doorplate" for the SPA entry. Changing it does not affect the admin API endpoints; API authorization is protected by JWT and rate limiting. The main reason to change this path is to filter out noise from automated scanners.
@@ -83,7 +83,7 @@ The startup log will show:
 ```
 🚀 NexaCard API 启动中
 ...
-Embedded SPAs: admin (/dj-mgmt-7x9k2), user (/)
+Embedded SPAs: admin (/nexa-console-7x9k2), user (/)
 ```
 
 When running, the binary automatically creates:
@@ -93,14 +93,14 @@ When running, the binary automatically creates:
 
 ## 6. Access the Site
 
-- **User frontend**: `http://<your-ip>:8080`
-- **Admin panel**: `http://<your-ip>:8080/<web.admin_path>` (the path you just configured)
+- **User frontend**: `http://<your-ip>:5175`
+- **Admin panel**: `http://<your-ip>:5175/<web.admin_path>` (the path you just configured)
 
 For the first login, use the default admin account (configured in the `bootstrap` section of `config.yml`). **Change the password immediately after logging in.**
 
 ## 7. Reverse Proxy & HTTPS (Production Deployment)
 
-Forward a single domain `shop.example.com` to port 8080 of the binary (Nginx example):
+Forward a single domain `shop.example.com` to port 5175 of the binary (Nginx example):
 
 ```nginx
 server {
@@ -112,7 +112,7 @@ server {
     client_max_body_size 50m;
 
     location / {
-        proxy_pass http://127.0.0.1:8080;
+        proxy_pass http://127.0.0.1:5175;
         proxy_set_header Host $host;
         proxy_set_header X-Real-IP $remote_addr;
         proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;

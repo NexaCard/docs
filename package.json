@@ -4,7 +4,7 @@
   "version": "0.1.0",
   "type": "module",
   "scripts": {
-    "docs:dev": "vitepress dev docs --port 5175",
+    "docs:dev": "vitepress dev docs --port 5176",
     "docs:build": "vitepress build docs",
     "docs:preview": "vitepress preview docs"
   },

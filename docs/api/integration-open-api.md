@@ -1,4 +1,4 @@
-﻿---
+---
 outline: deep
 ---
 
@@ -56,9 +56,9 @@ https://<B站域名>/api/v1/upstream
 
 | Header | 说明 |
 | --- | --- |
-| `Dujiao-Next-Api-Key` | API Key（由 B 站用户在前台"API 权限"中生成） |
-| `Dujiao-Next-Timestamp` | Unix 秒级时间戳 |
-| `Dujiao-Next-Signature` | HMAC-SHA256 签名（hex 小写） |
+| `NexaCard-Api-Key` | API Key（由 B 站用户在前台"API 权限"中生成） |
+| `NexaCard-Timestamp` | Unix 秒级时间戳 |
+| `NexaCard-Signature` | HMAC-SHA256 签名（hex 小写） |
 
 ### 2.2 签名算法
 
@@ -74,7 +74,7 @@ https://<B站域名>/api/v1/upstream
 | --- | --- |
 | `{METHOD}` | HTTP 方法大写，如 `GET`、`POST` |
 | `{PATH}` | 请求路径（不含域名和查询参数），如 `/api/v1/upstream/products` |
-| `{TIMESTAMP}` | 与请求头 `Dujiao-Next-Timestamp` 一致 |
+| `{TIMESTAMP}` | 与请求头 `NexaCard-Timestamp` 一致 |
 | `{BODY_MD5}` | 请求体的 MD5 哈希（hex 小写）。无 body 时为空字符串的 MD5：`d41d8cd98f00b204e9800998ecf8427e` |
 
 **最终签名：**
@@ -102,9 +102,9 @@ signature = hmac.new(
 ).hexdigest()
 
 headers = {
-    "Dujiao-Next-Api-Key": api_key,
-    "Dujiao-Next-Timestamp": timestamp,
-    "Dujiao-Next-Signature": signature,
+    "NexaCard-Api-Key": api_key,
+    "NexaCard-Timestamp": timestamp,
+    "NexaCard-Signature": signature,
     "Content-Type": "application/json",
 }
 ```
@@ -580,9 +580,9 @@ B 站使用 A 站的对接连接中配置的 `api_key` / `api_secret` 进行签�
 
 | Header | 说明 |
 | --- | --- |
-| `Dujiao-Next-Api-Key` | A 站在"对接连接"中设置的 API Key |
-| `Dujiao-Next-Timestamp` | Unix 秒级时间戳 |
-| `Dujiao-Next-Signature` | HMAC-SHA256 签名 |
+| `NexaCard-Api-Key` | A 站在"对接连接"中设置的 API Key |
+| `NexaCard-Timestamp` | Unix 秒级时间戳 |
+| `NexaCard-Signature` | HMAC-SHA256 签名 |
 
 **请求体：**
 
@@ -768,9 +768,9 @@ def api_request(method: str, path: str, body: dict = None):
     body_bytes = json.dumps(body).encode() if body else b""
     sig = sign(api_secret, method, path, ts, body_bytes)
     headers = {
-        "Dujiao-Next-Api-Key": api_key,
-        "Dujiao-Next-Timestamp": str(ts),
-        "Dujiao-Next-Signature": sig,
+        "NexaCard-Api-Key": api_key,
+        "NexaCard-Timestamp": str(ts),
+        "NexaCard-Signature": sig,
         "Content-Type": "application/json",
     }
     resp = requests.request(method, base_url + path, headers=headers, data=body_bytes)
@@ -818,9 +818,9 @@ curl_setopt_array($ch, [
     CURLOPT_RETURNTRANSFER => true,
     CURLOPT_HTTPHEADER => [
         'Content-Type: application/json',
-        "Dujiao-Next-Api-Key: {$apiKey}",
-        "Dujiao-Next-Timestamp: {$timestamp}",
-        "Dujiao-Next-Signature: {$signature}",
+        "NexaCard-Api-Key: {$apiKey}",
+        "NexaCard-Timestamp: {$timestamp}",
+        "NexaCard-Signature: {$signature}",
     ],
 ]);
 $response = curl_exec($ch);

@@ -1,4 +1,4 @@
-﻿---
+---
 outline: deep
 ---
 
@@ -153,9 +153,9 @@ A 站（对接方）                    B 站（被对接方）
 
 | Header | 说明 |
 | --- | --- |
-| `Dujiao-Next-Api-Key` | API Key |
-| `Dujiao-Next-Timestamp` | Unix 时间戳（秒） |
-| `Dujiao-Next-Signature` | HMAC-SHA256 签名 |
+| `NexaCard-Api-Key` | API Key |
+| `NexaCard-Timestamp` | Unix 时间戳（秒） |
+| `NexaCard-Signature` | HMAC-SHA256 签名 |
 
 签名字符串格式：
 
@@ -181,7 +181,7 @@ A 站（对接方）                    B 站（被对接方）
 
 优先检查：
 
-- 请求是否携带了三个必要的签名头（`Dujiao-Next-Api-Key`、`Dujiao-Next-Timestamp`、`Dujiao-Next-Signature`）
+- 请求是否携带了三个必要的签名头（`NexaCard-Api-Key`、`NexaCard-Timestamp`、`NexaCard-Signature`）
 - 时间戳是否偏差超过 60 秒
 - 签名字符串格式是否正确（注意 Body MD5 计算）
 

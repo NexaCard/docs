@@ -1,4 +1,4 @@
-# 使用 aaPanel 手动部署（基于 Releases 压缩包）
+﻿# 使用 aaPanel 手动部署（基于 Releases 压缩包）
 
 > 更新时间：2026-02-27
 
@@ -141,10 +141,10 @@ API 首次启动时会读取该配置完成管理员初始化。
 
 在外层网关（Nginx）中添加：
 
-- `/api` → `http://127.0.0.1:8080/api`
-- `/uploads` → `http://127.0.0.1:8080/uploads`
-- `/sitemap.xml` → `http://127.0.0.1:8080/sitemap.xml`（仅前台域名需要）
-- `/robots.txt` → `http://127.0.0.1:8080/robots.txt`（仅前台域名需要）
+- `/api` → `http://127.0.0.1:5175/api`
+- `/uploads` → `http://127.0.0.1:5175/uploads`
+- `/sitemap.xml` → `http://127.0.0.1:5175/sitemap.xml`（仅前台域名需要）
+- `/robots.txt` → `http://127.0.0.1:5175/robots.txt`（仅前台域名需要）
 
 ### 7.1 分域名部署示例
 
@@ -163,7 +163,7 @@ server {
 
     # SEO 资源由后端动态生成，必须显式反代，否则会被上面的 SPA 兜底拦截
     location = /sitemap.xml {
-        proxy_pass http://127.0.0.1:8080/sitemap.xml;
+        proxy_pass http://127.0.0.1:5175/sitemap.xml;
         proxy_set_header Host $host;
         proxy_set_header X-Real-IP $remote_addr;
         proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
@@ -171,7 +171,7 @@ server {
     }
 
     location = /robots.txt {
-        proxy_pass http://127.0.0.1:8080/robots.txt;
+        proxy_pass http://127.0.0.1:5175/robots.txt;
         proxy_set_header Host $host;
         proxy_set_header X-Real-IP $remote_addr;
         proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
@@ -179,7 +179,7 @@ server {
     }
 
     location /api/ {
-        proxy_pass http://127.0.0.1:8080/api/;
+        proxy_pass http://127.0.0.1:5175/api/;
         proxy_set_header Host $host;
         proxy_set_header X-Real-IP $remote_addr;
         proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
@@ -187,7 +187,7 @@ server {
     }
 
     location /uploads/ {
-        proxy_pass http://127.0.0.1:8080/uploads/;
+        proxy_pass http://127.0.0.1:5175/uploads/;
         proxy_set_header Host $host;
         proxy_set_header X-Real-IP $remote_addr;
         proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
@@ -208,7 +208,7 @@ server {
     }
 
     location /api/ {
-        proxy_pass http://127.0.0.1:8080/api/;
+        proxy_pass http://127.0.0.1:5175/api/;
         proxy_set_header Host $host;
         proxy_set_header X-Real-IP $remote_addr;
         proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
@@ -216,7 +216,7 @@ server {
     }
 
     location /uploads/ {
-        proxy_pass http://127.0.0.1:8080/uploads/;
+        proxy_pass http://127.0.0.1:5175/uploads/;
         proxy_set_header Host $host;
         proxy_set_header X-Real-IP $remote_addr;
         proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;

@@ -1,4 +1,4 @@
-# Manual Deployment (API / User / Admin)
+﻿# Manual Deployment (API / User / Admin)
 
 > Last updated: 2026-02-27
 
@@ -58,7 +58,7 @@ go run ./cmd/seed
 ```bash
 ./nexacard-api
 ```
-Default listening: `http://0.0.0.0:8080`
+Default listening: `http://0.0.0.0:5175`
 
 ### 2.5 Default Admin Account (Initial Setup)
 
@@ -114,7 +114,7 @@ You can choose to:
 
 ## 5. Nginx Reverse Proxy Configuration
 
-User and Admin each require their own domain. Both frontends send requests to `/api` and `/uploads`, which are forwarded by the outer Nginx to the API service (`127.0.0.1:8080`).
+User and Admin each require their own domain. Both frontends send requests to `/api` and `/uploads`, which are forwarded by the outer Nginx to the API service (`127.0.0.1:5175`).
 
 > The user-facing domain must additionally proxy `/sitemap.xml` and `/robots.txt` to the backend; otherwise the SPA catch-all route serves a NotFound page and search engines cannot fetch them.
 
@@ -139,7 +139,7 @@ server {
     # SEO assets are generated dynamically by the backend; they must be
     # proxied explicitly, otherwise the SPA fallback above will swallow them.
     location = /sitemap.xml {
-        proxy_pass http://127.0.0.1:8080/sitemap.xml;
+        proxy_pass http://127.0.0.1:5175/sitemap.xml;
         proxy_set_header Host $host;
         proxy_set_header X-Real-IP $remote_addr;
         proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
@@ -147,7 +147,7 @@ server {
     }
 
     location = /robots.txt {
-        proxy_pass http://127.0.0.1:8080/robots.txt;
+        proxy_pass http://127.0.0.1:5175/robots.txt;
         proxy_set_header Host $host;
         proxy_set_header X-Real-IP $remote_addr;
         proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
@@ -155,7 +155,7 @@ server {
     }
 
     location /api/ {
-        proxy_pass http://127.0.0.1:8080/api/;
+        proxy_pass http://127.0.0.1:5175/api/;
         proxy_set_header Host $host;
         proxy_set_header X-Real-IP $remote_addr;
         proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
@@ -163,7 +163,7 @@ server {
     }
 
     location /uploads/ {
-        proxy_pass http://127.0.0.1:8080/uploads/;
+        proxy_pass http://127.0.0.1:5175/uploads/;
         proxy_set_header Host $host;
         proxy_set_header X-Real-IP $remote_addr;
         proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
@@ -184,7 +184,7 @@ server {
     }
 
     location /api/ {
-        proxy_pass http://127.0.0.1:8080/api/;
+        proxy_pass http://127.0.0.1:5175/api/;
         proxy_set_header Host $host;
         proxy_set_header X-Real-IP $remote_addr;
         proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
@@ -192,7 +192,7 @@ server {
     }
 
     location /uploads/ {
-        proxy_pass http://127.0.0.1:8080/uploads/;
+        proxy_pass http://127.0.0.1:5175/uploads/;
         proxy_set_header Host $host;
         proxy_set_header X-Real-IP $remote_addr;
         proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;

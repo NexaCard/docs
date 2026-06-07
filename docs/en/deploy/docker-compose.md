@@ -1,4 +1,4 @@
-# Docker Compose Deployment (Docker Hub Images)
+﻿# Docker Compose Deployment (Docker Hub Images)
 
 > Last Updated: 2026-02-27
 
@@ -104,7 +104,7 @@ Create a new file at `/opt/nexacard/.env`:
 TAG=latest
 TZ=Asia/Shanghai
 
-API_PORT=8080
+API_PORT=5175
 USER_PORT=8081
 ADMIN_PORT=8082
 
@@ -163,7 +163,7 @@ services:
       NEXACARD_DEFAULT_ADMIN_USERNAME: ${NEXACARD_DEFAULT_ADMIN_USERNAME}
       NEXACARD_DEFAULT_ADMIN_PASSWORD: ${NEXACARD_DEFAULT_ADMIN_PASSWORD}
     ports:
-      - "127.0.0.1:${API_PORT}:8080"
+      - "127.0.0.1:${API_PORT}:5175"
     volumes:
       - ./config/config.yml:/app/config.yml:ro
       - ./data/db:/app/db
@@ -173,7 +173,7 @@ services:
       redis:
         condition: service_healthy
     healthcheck:
-      test: ["CMD", "wget", "-qO-", "http://127.0.0.1:8080/health"]
+      test: ["CMD", "wget", "-qO-", "http://127.0.0.1:5175/health"]
       interval: 10s
       timeout: 3s
       retries: 10
@@ -261,7 +261,7 @@ services:
       NEXACARD_DEFAULT_ADMIN_USERNAME: ${NEXACARD_DEFAULT_ADMIN_USERNAME}
       NEXACARD_DEFAULT_ADMIN_PASSWORD: ${NEXACARD_DEFAULT_ADMIN_PASSWORD}
     ports:
-      - "127.0.0.1:${API_PORT}:8080"
+      - "127.0.0.1:${API_PORT}:5175"
     volumes:
       - ./config/config.yml:/app/config.yml:ro
       - ./data/uploads:/app/uploads
@@ -272,7 +272,7 @@ services:
       postgres:
         condition: service_healthy
     healthcheck:
-      test: ["CMD", "wget", "-qO-", "http://127.0.0.1:8080/health"]
+      test: ["CMD", "wget", "-qO-", "http://127.0.0.1:5175/health"]
       interval: 10s
       timeout: 3s
       retries: 10
@@ -317,7 +317,7 @@ Both `user` and `admin` access the backend via `/api` and `/uploads`, so you nee
 
 > The example below uses the default ports:
 >
-> - API: `127.0.0.1:8080`
+> - API: `127.0.0.1:5175`
 > - User: `127.0.0.1:8081`
 > - Admin: `127.0.0.1:8082`
 >
@@ -342,7 +342,7 @@ server {
     # SEO assets are generated dynamically by the backend; they must be
     # proxied explicitly, otherwise the SPA fallback above will swallow them.
     location = /sitemap.xml {
-        proxy_pass http://127.0.0.1:8080/sitemap.xml;
+        proxy_pass http://127.0.0.1:5175/sitemap.xml;
         proxy_set_header Host $host;
         proxy_set_header X-Real-IP $remote_addr;
         proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
@@ -350,7 +350,7 @@ server {
     }
 
     location = /robots.txt {
-        proxy_pass http://127.0.0.1:8080/robots.txt;
+        proxy_pass http://127.0.0.1:5175/robots.txt;
         proxy_set_header Host $host;
         proxy_set_header X-Real-IP $remote_addr;
         proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
@@ -358,7 +358,7 @@ server {
     }
 
     location /api/ {
-        proxy_pass http://127.0.0.1:8080/api/;
+        proxy_pass http://127.0.0.1:5175/api/;
         proxy_set_header Host $host;
         proxy_set_header X-Real-IP $remote_addr;
         proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
@@ -366,7 +366,7 @@ server {
     }
 
     location /uploads/ {
-        proxy_pass http://127.0.0.1:8080/uploads/;
+        proxy_pass http://127.0.0.1:5175/uploads/;
         proxy_set_header Host $host;
         proxy_set_header X-Real-IP $remote_addr;
         proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
@@ -388,7 +388,7 @@ server {
     }
 
     location /api/ {
-        proxy_pass http://127.0.0.1:8080/api/;
+        proxy_pass http://127.0.0.1:5175/api/;
         proxy_set_header Host $host;
         proxy_set_header X-Real-IP $remote_addr;
         proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
@@ -396,7 +396,7 @@ server {
     }
 
     location /uploads/ {
-        proxy_pass http://127.0.0.1:8080/uploads/;
+        proxy_pass http://127.0.0.1:5175/uploads/;
         proxy_set_header Host $host;
         proxy_set_header X-Real-IP $remote_addr;
         proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;

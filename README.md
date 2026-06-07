@@ -1,22 +1,15 @@
 # NexaCard Documentation
 
-This repository contains the official documentation site for **NexaCard**, built with **VitePress**.
+Official documentation site for NexaCard, built with VitePress.
 
 ## Secondary Development Notice
 
-NexaCard Docs is maintained for the NexaCard secondary-development project. It uses NexaCard repositories, release links, deployment paths, and branding. See [NOTICE.md](./NOTICE.md).
+NexaCard Docs is maintained for the NexaCard secondary-development project. It points to NexaCard repositories, release links, deployment paths, and branding. See [NOTICE.md](./NOTICE.md).
 
-## Website
+## Requirements
 
-- GitHub (docs): https://github.com/NexaCard/docs
-- GitHub (main API project): https://github.com/NexaCard/API
-- GitHub (user frontend): https://github.com/NexaCard/user
-- GitHub (admin frontend): https://github.com/NexaCard/admin
-
-## Tech Stack
-
-- Node.js
-- VitePress
+- Node.js `20 LTS` or higher
+- npm `10+`
 
 ## Local Development
 
@@ -25,7 +18,9 @@ npm install
 npm run docs:dev
 ```
 
-Default local URL: `http://localhost:5173`
+Default local URL:
+
+- Docs: `http://localhost:5176`
 
 ## Build
 
@@ -33,20 +28,17 @@ Default local URL: `http://localhost:5173`
 npm run docs:build
 ```
 
-The static files will be generated in `docs/.vitepress/dist`.
+The static files are generated in `docs/.vitepress/dist`.
 
-## Docker
+## Deployment Docs
 
-Build image:
+- Manual deployment: `docs/deploy/manual.md`
+- Docker Compose: `docs/deploy/docker-compose.md`
+- Nginx Proxy Manager: `docs/deploy/nginx-proxy-manager.md`
 
-```bash
-docker build -t nexacard/docs:latest .
-```
+## Related Repositories
 
-Run container:
-
-```bash
-docker run --rm -p 8082:80 nexacard/docs:latest
-```
-
-Then open `http://localhost:8082`.
+- API: https://github.com/NexaCard/API
+- User: https://github.com/NexaCard/user
+- Admin: https://github.com/NexaCard/admin
+- Docs: https://github.com/NexaCard/docs

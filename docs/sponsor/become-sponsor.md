@@ -1,4 +1,4 @@
-﻿# 成为赞助商
+# 成为赞助商
 
 > 更新时间：2026-02-12
 
@@ -40,7 +40,7 @@
 
 请通过 Telegram 联系作者：
 
-- 联系方式：<https://t.me/assimon_bot>
+- 联系方式：<https://github.com/NexaCard>
 
 建议私信模板：
 

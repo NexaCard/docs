@@ -1,4 +1,4 @@
-﻿# Become a Sponsor
+# Become a Sponsor
 
 > Updated: 2026-02-12
 
@@ -40,7 +40,7 @@ As a sponsor, you can get the following exposure and benefits:
 
 Please contact the maintainer via Telegram:
 
-- Contact: <https://t.me/assimon_bot>
+- Contact: <https://github.com/NexaCard>
 
 Suggested DM template:
 

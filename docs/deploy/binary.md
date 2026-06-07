@@ -1,4 +1,4 @@
-﻿# 单二进制部署（推荐小白）
+# 单二进制部署（推荐小白）
 
 > 适用人群：完全新手，不想接触 Docker 多容器编排，希望"一个二进制 + 一个 Redis 容器 + 一个域名"就能跑起来。
 
@@ -43,7 +43,7 @@ cp config.yml.example config.yml
 |---|---|---|
 | `jwt.secret` | 后台管理员 JWT 密钥，**必改** | `openssl rand -hex 32` 输出 |
 | `user_jwt.secret` | 用户 JWT 密钥，**必改** | 同上，不同值 |
-| `web.admin_path` | 后台访问路径前缀，**强烈建议改** | `/dj-mgmt-7x9k2` |
+| `web.admin_path` | 后台访问路径前缀，**强烈建议改** | `/nexa-console-7x9k2` |
 | `redis.host` / `redis.port` | Redis 地址（分两个字段，默认 `127.0.0.1` + `6379`） | `127.0.0.1` + `6379` |
 | `database.driver` / `database.dsn` | 数据库（默认 SQLite 起步） | 见下方 |
 
@@ -53,7 +53,7 @@ cp config.yml.example config.yml
 
 ```yaml
 web:
-  admin_path: "/dj-mgmt-7x9k2"   # 个人偏好的字符串
+  admin_path: "/nexa-console-7x9k2"   # 个人偏好的字符串
 ```
 
 这个路径只是 SPA 入口的"门牌"，改了它不影响 admin API 接口；API 鉴权由 JWT + 限流保护。改路径主要是过滤掉自动化扫描的噪音。
@@ -83,7 +83,7 @@ docker compose up -d redis
 ```
 🚀 NexaCard API 启动中
 ...
-Embedded SPAs: admin (/dj-mgmt-7x9k2), user (/)
+Embedded SPAs: admin (/nexa-console-7x9k2), user (/)
 ```
 
 二进制运行时会自动创建：
@@ -93,14 +93,14 @@ Embedded SPAs: admin (/dj-mgmt-7x9k2), user (/)
 
 ## 6. 访问
 
-- **用户端**：`http://<your-ip>:8080`
-- **管理端**：`http://<your-ip>:8080/<web.admin_path>`（你刚才改的路径）
+- **用户端**：`http://<your-ip>:5175`
+- **管理端**：`http://<your-ip>:5175/<web.admin_path>`（你刚才改的路径）
 
 首次登录用默认管理员账号（在 `config.yml` 的 `bootstrap` 段配置）。**登录后立即修改密码**。
 
 ## 7. 反代与 HTTPS（生产部署）
 
-把单个域名 `shop.example.com` 转发到二进制的 8080 端口（Nginx 示例）：
+把单个域名 `shop.example.com` 转发到二进制的 5175 端口（Nginx 示例）：
 
 ```nginx
 server {
@@ -112,7 +112,7 @@ server {
     client_max_body_size 50m;
 
     location / {
-        proxy_pass http://127.0.0.1:8080;
+        proxy_pass http://127.0.0.1:5175;
         proxy_set_header Host $host;
         proxy_set_header X-Real-IP $remote_addr;
         proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;

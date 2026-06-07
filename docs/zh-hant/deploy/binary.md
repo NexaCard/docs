@@ -1,4 +1,4 @@
-﻿# 單二進制部署（推薦新手）
+# 單二進制部署（推薦新手）
 
 > 適用人群：完全新手，不想接觸 Docker 多容器編排，希望「一個二進制 + 一個 Redis 容器 + 一個網域」就能跑起來。
 
@@ -43,7 +43,7 @@ cp config.yml.example config.yml
 |---|---|---|
 | `jwt.secret` | 後台管理員 JWT 金鑰，**必改** | `openssl rand -hex 32` 輸出 |
 | `user_jwt.secret` | 使用者 JWT 金鑰，**必改** | 同上，不同值 |
-| `web.admin_path` | 後台存取路徑前綴，**強烈建議改** | `/dj-mgmt-7x9k2` |
+| `web.admin_path` | 後台存取路徑前綴，**強烈建議改** | `/nexa-console-7x9k2` |
 | `redis.host` / `redis.port` | Redis 位址（分兩個欄位，預設 `127.0.0.1` + `6379`） | `127.0.0.1` + `6379` |
 | `database.driver` / `database.dsn` | 資料庫（預設 SQLite 起步） | 見下方 |
 
@@ -53,7 +53,7 @@ cp config.yml.example config.yml
 
 ```yaml
 web:
-  admin_path: "/dj-mgmt-7x9k2"   # 個人偏好的字串
+  admin_path: "/nexa-console-7x9k2"   # 個人偏好的字串
 ```
 
 這個路徑只是 SPA 入口的「門牌」，改了它不影響 admin API 介面；API 鑑權由 JWT + 限流保護。改路徑主要是過濾掉自動化掃描的雜訊。
@@ -83,7 +83,7 @@ docker compose up -d redis
 ```
 🚀 NexaCard API 啟動中
 ...
-Embedded SPAs: admin (/dj-mgmt-7x9k2), user (/)
+Embedded SPAs: admin (/nexa-console-7x9k2), user (/)
 ```
 
 二進制執行時會自動建立：
@@ -93,14 +93,14 @@ Embedded SPAs: admin (/dj-mgmt-7x9k2), user (/)
 
 ## 6. 存取
 
-- **使用者端**：`http://<your-ip>:8080`
-- **管理端**：`http://<your-ip>:8080/<web.admin_path>`（你剛才改的路徑）
+- **使用者端**：`http://<your-ip>:5175`
+- **管理端**：`http://<your-ip>:5175/<web.admin_path>`（你剛才改的路徑）
 
 首次登入用預設管理員帳號（在 `config.yml` 的 `bootstrap` 段設定）。**登入後立即修改密碼**。
 
 ## 7. 反向代理與 HTTPS（生產部署）
 
-把單個網域 `shop.example.com` 轉發到二進制的 8080 連接埠（Nginx 範例）：
+把單個網域 `shop.example.com` 轉發到二進制的 5175 連接埠（Nginx 範例）：
 
 ```nginx
 server {
@@ -112,7 +112,7 @@ server {
     client_max_body_size 50m;
 
     location / {
-        proxy_pass http://127.0.0.1:8080;
+        proxy_pass http://127.0.0.1:5175;
         proxy_set_header Host $host;
         proxy_set_header X-Real-IP $remote_addr;
         proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;

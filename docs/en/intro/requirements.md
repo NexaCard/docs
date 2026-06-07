@@ -1,4 +1,4 @@
-# Environment Requirements
+﻿# Environment Requirements
 
 > Updated: 2026-02-11
 
@@ -35,10 +35,10 @@ Any of the following systems is recommended:
 
 ## 3. Suggested Port Plan
 
-- API: `8080`
+- API: `5175`
 - User: `5173` (development)
 - Admin: `5174` (development)
-- Docs (VitePress): `5175` (example, configurable)
+- Docs (VitePress): `5176` (example, configurable)
 
 ## 4. Development Environment Self-Check
 

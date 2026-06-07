@@ -1,4 +1,4 @@
-﻿# 官方服务
+# 官方服务
 
 > 更新时间：2026-04-20
 
@@ -37,7 +37,7 @@
 
 ## 联系方式
 
-- Telegram：<https://t.me/assimon_bot>
+- Telegram：<https://github.com/NexaCard>
 
 ## 服务条款
 

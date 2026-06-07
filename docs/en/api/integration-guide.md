@@ -1,4 +1,4 @@
-﻿---
+---
 outline: deep
 ---
 
@@ -153,9 +153,9 @@ All API requests use HMAC-SHA256 signature authentication with the following hea
 
 | Header | Description |
 | --- | --- |
-| `Dujiao-Next-Api-Key` | API Key |
-| `Dujiao-Next-Timestamp` | Unix timestamp (seconds) |
-| `Dujiao-Next-Signature` | HMAC-SHA256 signature |
+| `NexaCard-Api-Key` | API Key |
+| `NexaCard-Timestamp` | Unix timestamp (seconds) |
+| `NexaCard-Signature` | HMAC-SHA256 signature |
 
 Signature string format:
 
@@ -181,7 +181,7 @@ Check the following:
 
 Check the following:
 
-- Does the request include all three required signature headers (`Dujiao-Next-Api-Key`, `Dujiao-Next-Timestamp`, `Dujiao-Next-Signature`)?
+- Does the request include all three required signature headers (`NexaCard-Api-Key`, `NexaCard-Timestamp`, `NexaCard-Signature`)?
 - Is the timestamp within 60 seconds of the current time?
 - Is the signature string format correct (check Body MD5 calculation)?
 

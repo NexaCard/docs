@@ -1,4 +1,4 @@
-﻿# Official Services
+# Official Services
 
 > Updated: 2026-04-20
 
@@ -37,7 +37,7 @@ This page describes the official technical service offerings and terms for NexaC
 
 ## Contact
 
-- Telegram: <https://t.me/assimon_bot>
+- Telegram: <https://github.com/NexaCard>
 
 ## Service Terms
 

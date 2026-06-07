@@ -1,4 +1,4 @@
-﻿# Telegram Bot Service Overview
+# Telegram Bot Service Overview
 
 > Updated: 2026-04-20
 
@@ -84,4 +84,4 @@ Telegram Bot is an independent NexaCard extension that extends your site capabil
 
 ## Contact
 
-- Telegram: <https://t.me/assimon_bot>
+- Telegram: <https://github.com/NexaCard>

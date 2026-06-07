@@ -12,10 +12,10 @@ outline: deep
 
 ### Q: Port already in use on startup
 
-Check whether the port configured in `config.yml` under `server.port` (default 8080) is occupied by another process:
+Check whether the port configured in `config.yml` under `server.port` (default 5175) is occupied by another process:
 
 ```bash
-lsof -i :8080
+lsof -i :5175
 ```
 
 Change the port or stop the conflicting process, then restart.
@@ -184,7 +184,7 @@ Troubleshoot in the following order:
 
 ### Q: Storefront shows API errors
 
-1. In development, confirm the backend service is running (default localhost:8080)
+1. In development, confirm the backend service is running (default localhost:5175)
 2. Verify the Vite dev server proxy is configured correctly (`/api` proxied to the backend)
 3. In production, confirm the Nginx reverse proxy configuration is correct
 

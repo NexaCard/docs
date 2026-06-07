@@ -1,4 +1,4 @@
-﻿# Telegram Bot 服务介绍
+# Telegram Bot 服务介绍
 
 > 更新时间：2026-04-20
 
@@ -84,4 +84,4 @@ Telegram Bot 是 NexaCard 的独立扩展功能，用于把站点能力延伸到
 
 ## 联系方式
 
-- Telegram：<https://t.me/assimon_bot>
+- Telegram：<https://github.com/NexaCard>

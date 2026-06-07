@@ -1,4 +1,4 @@
-# `config.yml` Detailed Explanation and Recommended Configuration
+﻿# `config.yml` Detailed Explanation and Recommended Configuration
 
 > Last Updated: 2026-03-28
 
@@ -30,7 +30,7 @@ Applicable Scenarios: Single-machine development, low concurrency testing.
 ```yaml
 server:
   host: 0.0.0.0
-  port: 8080
+  port: 5175
   mode: debug
 
 log:
@@ -72,7 +72,7 @@ Applicable scenarios: official business, predictable concurrent traffic.
 ```yaml
 server:
   host: 0.0.0.0
-  port: 8080
+  port: 5175
   mode: release
 
 log:
@@ -161,7 +161,7 @@ Common incorrect combinations:
 | Field | Type | Default | Description | Recommendation |
 | --- | --- | --- | --- | --- |
 | `host` | string | `0.0.0.0` | Listening address | `0.0.0.0` |
-| `port` | string | `8080` | Service port | `8080` |
+| `port` | string | `5175` | Service port | `5175` |
 | `mode` | string | `debug` | Running mode: `debug`/`release` | Use `release` for production |
 
 ## 5.2 `log`
