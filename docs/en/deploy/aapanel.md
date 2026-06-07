@@ -1,4 +1,4 @@
-﻿# Manually Deploy Using aaPanel (Based on Releases Archive)
+# Manually Deploy Using aaPanel (Based on Releases Archive)
 
 > Last Updated: 2026-02-27
 
@@ -40,37 +40,37 @@ Please download the corresponding version package from the Releases of the follo
 
 Example (replace the file name with your actual Release artifact):
 
-> The API package follows GoReleaser naming rules: `dujiao-next_<tag>_Linux_x86_64.tar.gz`, for example `dujiao-next_v1.0.0_Linux_x86_64.tar.gz`.
-> Example User package name: `dujiao-next-user-v1.0.0.zip`.
-> Example Admin package name: `dujiao-next-admin-v1.0.0.zip`.
+> The API package follows GoReleaser naming rules: `nexacard-api_<tag>_Linux_x86_64.tar.gz`, for example `nexacard-api_v1.0.0_Linux_x86_64.tar.gz`.
+> Example User package name: `nexacard-user-v1.0.0.zip`.
+> Example Admin package name: `nexacard-admin-v1.0.0.zip`.
 
 ```bash
 # API
-wget -O api.tar.gz https://github.com/NexaCard/API/releases/download/v1.0.0/dujiao-next_v1.0.0_Linux_x86_64.tar.gz
+wget -O api.tar.gz https://github.com/NexaCard/API/releases/download/v1.0.0/nexacard-api_v1.0.0_Linux_x86_64.tar.gz
 mkdir -p api && tar -xzf api.tar.gz -C api
 
 # User
-wget -O user.zip https://github.com/NexaCard/user/releases/download/v1.0.0/dujiao-next-user-v1.0.0.zip
+wget -O user.zip https://github.com/NexaCard/user/releases/download/v1.0.0/nexacard-user-v1.0.0.zip
 mkdir -p user && unzip -o user.zip -d user
 
 # Admin
-wget -O admin.zip https://github.com/NexaCard/admin/releases/download/v1.0.0/dujiao-next-admin-v1.0.0.zip
+wget -O admin.zip https://github.com/NexaCard/admin/releases/download/v1.0.0/nexacard-admin-v1.0.0.zip
 mkdir -p admin && unzip -o admin.zip -d admin
 ```
 > After extracting the API package, the `/www/wwwroot/nexacard/api` directory should contain:
 > - `config.yml.example`
-> - `dujiao-next`
+> - `nexacard`
 > - `README.md`
 
 ## 4. Deploy the API (no compilation required)
 
-Make sure the API extraction directory contains the following files: `config.yml.example`, `dujiao-next`, `README.md`.
+Make sure the API extraction directory contains the following files: `config.yml.example`, `nexacard`, `README.md`.
 
 ```bash
 cd /www/wwwroot/nexacard/api
 cp config.yml.example config.yml
 # Edit config.yml
-chmod +x ./dujiao-next
+chmod +x ./nexacard
 ```
 > ⚠️ Important Security Reminder: You must change the `jwt.secret` and `user_jwt.secret` in `config.yml` before going live.
 >
@@ -80,11 +80,11 @@ Add the startup command in aaPanel's PM2/Supervisor:
 
 > It is also recommended to set environment variables for this process (used to initialize the default admin and avoid using weak default passwords):
 >
-> - `DJ_DEFAULT_ADMIN_USERNAME=admin`
-> - `DJ_DEFAULT_ADMIN_PASSWORD=<your strong password>`
+> - `NEXACARD_DEFAULT_ADMIN_USERNAME=admin`
+> - `NEXACARD_DEFAULT_ADMIN_PASSWORD=<your strong password>`
 
 ```bash
-/www/wwwroot/nexacard/api/dujiao-next
+/www/wwwroot/nexacard/api/nexacard
 ```
 The working directory is set to:
 
@@ -100,7 +100,7 @@ When the `admins` table in the database is empty, the API will attempt to create
 
 > Strongly recommended: Change the password immediately after the first login to the admin panel.
 
-If you have already set `DJ_DEFAULT_ADMIN_USERNAME` / `DJ_DEFAULT_ADMIN_PASSWORD` in PM2/Supervisor, those values take highest priority.
+If you have already set `NEXACARD_DEFAULT_ADMIN_USERNAME` / `NEXACARD_DEFAULT_ADMIN_PASSWORD` in PM2/Supervisor, those values take highest priority.
 
 If those environment variables are not set, you can also configure `config.yml`:
 

@@ -29,7 +29,7 @@ SQLite data is stored in a single file -- simply copy it:
 
 ```bash
 # Back up
-cp api/db/dujiao.db api/db/dujiao.db.bak.$(date +%Y%m%d%H%M%S)
+cp api/db/nexacard.db api/db/nexacard.db.bak.$(date +%Y%m%d%H%M%S)
 ```
 
 > It is recommended to back up while the service is stopped or during low-traffic periods to avoid write conflicts.
@@ -40,20 +40,20 @@ Use `pg_dump` to back up:
 
 ```bash
 # Full database backup
-pg_dump -U dujiao -d dujiao -F c -f dujiao_backup_$(date +%Y%m%d).dump
+pg_dump -U nexacard -d nexacard -F c -f nexacard_backup_$(date +%Y%m%d).dump
 
 # Data-only backup (no schema, suitable for migration)
-pg_dump -U dujiao -d dujiao --data-only -f dujiao_data_$(date +%Y%m%d).sql
+pg_dump -U nexacard -d nexacard --data-only -f nexacard_data_$(date +%Y%m%d).sql
 ```
 
 ### 2.3 Docker Environment Backup
 
 ```bash
 # SQLite (copy directly from the container)
-docker compose cp api:/app/db/dujiao.db ./backup/dujiao.db
+docker compose cp api:/app/db/nexacard.db ./backup/nexacard.db
 
 # PostgreSQL (using pg_dump)
-docker compose exec postgres pg_dump -U dujiao -d dujiao -F c -f /tmp/backup.dump
+docker compose exec postgres pg_dump -U nexacard -d nexacard -F c -f /tmp/backup.dump
 docker compose cp postgres:/tmp/backup.dump ./backup/
 ```
 
@@ -96,12 +96,12 @@ Create a scheduled backup script:
 # backup.sh
 
 BACKUP_DIR="/path/to/backup/$(date +%Y%m%d)"
-APP_DIR="/path/to/dujiao-studio/api"
+APP_DIR="/path/to/nexacard/api"
 
 mkdir -p "$BACKUP_DIR"
 
 # Back up database (SQLite)
-cp "$APP_DIR/db/dujiao.db" "$BACKUP_DIR/dujiao.db"
+cp "$APP_DIR/db/nexacard.db" "$BACKUP_DIR/nexacard.db"
 
 # Back up configuration
 cp "$APP_DIR/config.yml" "$BACKUP_DIR/config.yml"
@@ -119,7 +119,7 @@ Add a crontab entry for scheduled execution:
 
 ```bash
 # Run backup daily at 3:00 AM
-0 3 * * * /path/to/backup.sh >> /var/log/dujiao-backup.log 2>&1
+0 3 * * * /path/to/backup.sh >> /var/log/nexacard-backup.log 2>&1
 ```
 
 ---
@@ -130,26 +130,26 @@ Add a crontab entry for scheduled execution:
 
 ```bash
 # Stop the service
-systemctl stop dujiao-next
+systemctl stop nexacard
 
 # Restore the database
-cp backup/dujiao.db api/db/dujiao.db
+cp backup/nexacard.db api/db/nexacard.db
 
 # Start the service
-systemctl start dujiao-next
+systemctl start nexacard
 ```
 
 ### 6.2 Restore PostgreSQL
 
 ```bash
 # Stop the service
-systemctl stop dujiao-next
+systemctl stop nexacard
 
 # Restore the database
-pg_restore -U dujiao -d dujiao -c backup/dujiao_backup.dump
+pg_restore -U nexacard -d nexacard -c backup/nexacard_backup.dump
 
 # Start the service
-systemctl start dujiao-next
+systemctl start nexacard
 ```
 
 ### 6.3 Restore Configuration and Uploaded Files

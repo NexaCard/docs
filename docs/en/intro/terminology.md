@@ -10,7 +10,7 @@ This page standardizes core terms used across NexaCard documentation to reduce a
 | --- | --- | --- | --- |
 | 前台 | User Frontend | 前台 | End-user facing site (`web` is now unified as `user`) |
 | 后台 | Admin Panel | 後台 | Admin management interface (`admin-web` is now unified as `admin`) |
-| 后端 / API | API Service | 後端 / API | Backend business API service (repo: `dujiao-next`) |
+| 后端 / API | API Service | 後端 / API | Backend business API service (repo: `nexacard`) |
 | 文档站 | Documentation | 文件站 | Official docs site (repo: `document`) |
 | 商品 | Product | 商品 | Sellable item (digital or manually fulfilled) |
 | 订单 | Order | 訂單 | Transaction record created after purchase |

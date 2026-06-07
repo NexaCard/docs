@@ -20,12 +20,12 @@
 
 ## 1. Download
 
-Go to [GitHub Releases](https://github.com/NexaCard/API/releases) and find the latest `dujiao-all_*.tar.gz`. Pick the one matching your system architecture:
+Go to [GitHub Releases](https://github.com/NexaCard/API/releases) and find the latest `nexacard-all_*.tar.gz`. Pick the one matching your system architecture:
 
 ```bash
 # Example: Linux amd64
-wget https://github.com/NexaCard/API/releases/download/vX.Y.Z/dujiao-all_vX.Y.Z_linux_amd64.tar.gz
-tar -xzf dujiao-all_*.tar.gz
+wget https://github.com/NexaCard/API/releases/download/vX.Y.Z/nexacard-all_vX.Y.Z_linux_amd64.tar.gz
+tar -xzf nexacard-all_*.tar.gz
 cd <extracted-directory>
 ```
 
@@ -60,7 +60,7 @@ This path is just the "doorplate" for the SPA entry. Changing it does not affect
 
 ### Database Options
 
-- **SQLite (default)**: Zero configuration. Data is stored in `./db/dujiao.db`. Sufficient for a single-machine setup.
+- **SQLite (default)**: Zero configuration. Data is stored in `./db/nexacard.db`. Sufficient for a single-machine setup.
 - **PostgreSQL (recommended for production)**: Set `database.driver` to `postgres` and `database.dsn` to your connection string.
 
 ## 4. Start Redis
@@ -76,7 +76,7 @@ If you already have Redis running (as a system service or another container), ju
 ## 5. Start the Binary
 
 ```bash
-./dujiao-server
+./nexacard-server
 ```
 
 The startup log will show:
@@ -125,11 +125,11 @@ server {
 
 First create the runtime user (if you plan to run the service under a dedicated account):
 ```bash
-sudo useradd -r -s /sbin/nologin -d /opt/dujiao dujiao
-sudo chown -R dujiao:dujiao /opt/dujiao
+sudo useradd -r -s /sbin/nologin -d /opt/nexacard nexacard
+sudo chown -R nexacard:nexacard /opt/nexacard
 ```
 
-`/etc/systemd/system/dujiao.service`:
+`/etc/systemd/system/nexacard.service`:
 ```ini
 [Unit]
 Description=NexaCard Fullstack
@@ -137,10 +137,10 @@ After=network.target
 
 [Service]
 Type=simple
-WorkingDirectory=/opt/dujiao
-ExecStart=/opt/dujiao/dujiao-server
+WorkingDirectory=/opt/nexacard
+ExecStart=/opt/nexacard/nexacard-server
 Restart=on-failure
-User=dujiao
+User=nexacard
 
 [Install]
 WantedBy=multi-user.target
@@ -148,16 +148,16 @@ WantedBy=multi-user.target
 
 ```bash
 sudo systemctl daemon-reload
-sudo systemctl enable --now dujiao
-sudo journalctl -u dujiao -f
+sudo systemctl enable --now nexacard
+sudo journalctl -u nexacard -f
 ```
 
 ## 9. Upgrade
 
-1. `systemctl stop dujiao`
+1. `systemctl stop nexacard`
 2. Back up: `cp -r db uploads /backup/`
-3. Download the new tar.gz and replace only the `dujiao-server` binary
-4. `systemctl start dujiao`
+3. Download the new tar.gz and replace only the `nexacard-server` binary
+4. `systemctl start nexacard`
 
 Database migrations run automatically.
 

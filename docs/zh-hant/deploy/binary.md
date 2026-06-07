@@ -20,12 +20,12 @@
 
 ## 1. 下載
 
-到 [GitHub Releases](https://github.com/NexaCard/API/releases) 找最新的 `dujiao-all_*.tar.gz`，按系統架構選：
+到 [GitHub Releases](https://github.com/NexaCard/API/releases) 找最新的 `nexacard-all_*.tar.gz`，按系統架構選：
 
 ```bash
 # 例：Linux amd64
-wget https://github.com/NexaCard/API/releases/download/vX.Y.Z/dujiao-all_vX.Y.Z_linux_amd64.tar.gz
-tar -xzf dujiao-all_*.tar.gz
+wget https://github.com/NexaCard/API/releases/download/vX.Y.Z/nexacard-all_vX.Y.Z_linux_amd64.tar.gz
+tar -xzf nexacard-all_*.tar.gz
 cd <解壓縮目錄>
 ```
 
@@ -60,7 +60,7 @@ web:
 
 ### 關於資料庫
 
-- **SQLite（預設）**：零設定，資料存在 `./db/dujiao.db`，單機夠用。
+- **SQLite（預設）**：零設定，資料存在 `./db/nexacard.db`，單機夠用。
 - **PostgreSQL（生產推薦）**：把 `database.driver` 改為 `postgres`，`database.dsn` 寫連接串。
 
 ## 4. 啟動 Redis
@@ -76,7 +76,7 @@ docker compose up -d redis
 ## 5. 啟動二進制
 
 ```bash
-./dujiao-server
+./nexacard-server
 ```
 
 啟動日誌會顯示：
@@ -125,11 +125,11 @@ server {
 
 先建立執行使用者（如果你打算用專用使用者跑服務）：
 ```bash
-sudo useradd -r -s /sbin/nologin -d /opt/dujiao dujiao
-sudo chown -R dujiao:dujiao /opt/dujiao
+sudo useradd -r -s /sbin/nologin -d /opt/nexacard nexacard
+sudo chown -R nexacard:nexacard /opt/nexacard
 ```
 
-`/etc/systemd/system/dujiao.service`：
+`/etc/systemd/system/nexacard.service`：
 ```ini
 [Unit]
 Description=NexaCard Fullstack
@@ -137,10 +137,10 @@ After=network.target
 
 [Service]
 Type=simple
-WorkingDirectory=/opt/dujiao
-ExecStart=/opt/dujiao/dujiao-server
+WorkingDirectory=/opt/nexacard
+ExecStart=/opt/nexacard/nexacard-server
 Restart=on-failure
-User=dujiao
+User=nexacard
 
 [Install]
 WantedBy=multi-user.target
@@ -148,16 +148,16 @@ WantedBy=multi-user.target
 
 ```bash
 sudo systemctl daemon-reload
-sudo systemctl enable --now dujiao
-sudo journalctl -u dujiao -f
+sudo systemctl enable --now nexacard
+sudo journalctl -u nexacard -f
 ```
 
 ## 9. 升級
 
-1. `systemctl stop dujiao`
+1. `systemctl stop nexacard`
 2. 備份：`cp -r db uploads /backup/`
-3. 下載新版 tar.gz，僅替換 `dujiao-server` 二進制
-4. `systemctl start dujiao`
+3. 下載新版 tar.gz，僅替換 `nexacard-server` 二進制
+4. `systemctl start nexacard`
 
 資料庫遷移自動完成。
 

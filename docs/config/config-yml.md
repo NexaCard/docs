@@ -43,7 +43,7 @@ log:
 
 database:
   driver: sqlite
-  dsn: ./db/dujiao.db?_busy_timeout=5000&_journal_mode=WAL&_synchronous=NORMAL
+  dsn: ./db/nexacard.db?_busy_timeout=5000&_journal_mode=WAL&_synchronous=NORMAL
   pool:
     max_open_conns: 1
     max_idle_conns: 1
@@ -77,7 +77,7 @@ server:
   mode: release
 
 log:
-  dir: /var/log/dujiao-next
+  dir: /var/log/nexacard
   filename: app.log
   max_size_mb: 100
   max_backups: 14
@@ -86,7 +86,7 @@ log:
 
 database:
   driver: postgres
-  dsn: host=127.0.0.1 port=5432 user=dujiao password=CHANGE_ME dbname=dujiao sslmode=disable TimeZone=Asia/Shanghai
+  dsn: host=127.0.0.1 port=5432 user=nexacard password=CHANGE_ME dbname=nexacard sslmode=disable TimeZone=Asia/Shanghai
   pool:
     max_open_conns: 50
     max_idle_conns: 10
@@ -117,7 +117,7 @@ PostgreSQL 重点提醒：
 ```yaml
 database:
   driver: postgres
-  dsn: host=127.0.0.1 port=5432 user=dujiao password=CHANGE_ME dbname=dujiao sslmode=disable TimeZone=Asia/Shanghai
+  dsn: host=127.0.0.1 port=5432 user=nexacard password=CHANGE_ME dbname=nexacard sslmode=disable TimeZone=Asia/Shanghai
   pool:
     max_open_conns: 20
     max_idle_conns: 5
@@ -183,7 +183,7 @@ database:
 | 字段 | 类型 | 默认值 | 说明 | 推荐 |
 | --- | --- | --- | --- | --- |
 | `driver` | string | `sqlite` | `sqlite` 或 `postgres` | 生产建议 `postgres` |
-| `dsn` | string | `./db/dujiao.db` | 数据库连接串 | 按环境配置 |
+| `dsn` | string | `./db/nexacard.db` | 数据库连接串 | 按环境配置 |
 | `pool.max_open_conns` | int | `1` | 最大打开连接数 | SQLite=1；Postgres=20~100 |
 | `pool.max_idle_conns` | int | `1` | 最大空闲连接数 | 5~20 或 open 的 20%~40% |
 | `pool.conn_max_lifetime_seconds` | int | `0` | 连接最大生命周期（秒，0=不限制） | `900~3600` |
@@ -284,7 +284,8 @@ database:
 补充：
 
 - 仅当数据库 `admins` 表为空时，首次启动才会尝试创建默认管理员。
-- 优先级：`DJ_DEFAULT_ADMIN_USERNAME` / `DJ_DEFAULT_ADMIN_PASSWORD`（环境变量） > `bootstrap.default_admin_username` / `bootstrap.default_admin_password`（`config.yml`） > 系统默认值。
+- 优先级：`NEXACARD_DEFAULT_ADMIN_USERNAME` / `NEXACARD_DEFAULT_ADMIN_PASSWORD`（环境变量） > `bootstrap.default_admin_username` / `bootstrap.default_admin_password`（`config.yml`） > 系统默认值。
+- 历史兼容：旧变量 `DJ_DEFAULT_ADMIN_USERNAME` / `DJ_DEFAULT_ADMIN_PASSWORD` 仍可作为回退读取，但新部署应使用 `NEXACARD_DEFAULT_ADMIN_*`。
 - 若运行在 `release` 模式且环境变量与 `config.yml` 都未提供管理员密码，系统会跳过默认管理员初始化。
 
 ## 5.12 `order`
@@ -302,7 +303,7 @@ database:
 | 字段 | 类型 | 说明 | 推荐 |
 | --- | --- | --- | --- |
 | `enabled` | bool | 是否启用 Telegram 登录 | 按需开启 |
-| `bot_username` | string | Bot 用户名（不带 `@`） | 例如 `dujiao_login_bot` |
+| `bot_username` | string | Bot 用户名（不带 `@`） | 例如 `nexacard_login_bot` |
 | `bot_token` | string | Bot Token | 由 BotFather 生成 |
 | `login_expire_seconds` | int | 登录有效期（秒） | `300` |
 | `replay_ttl_seconds` | int | 重放保护时长（秒） | `300` |
@@ -356,8 +357,8 @@ captcha:
 - `DATABASE_DSN=host=127.0.0.1 ...`
 - `JWT_SECRET=...`
 - `USER_JWT_SECRET=...`
-- `DJ_DEFAULT_ADMIN_USERNAME=admin`
-- `DJ_DEFAULT_ADMIN_PASSWORD=<你的强密码>`
+- `NEXACARD_DEFAULT_ADMIN_USERNAME=admin`
+- `NEXACARD_DEFAULT_ADMIN_PASSWORD=<你的强密码>`
 - `REDIS_HOST=127.0.0.1`
 - `CAPTCHA_TURNSTILE_SITE_KEY=...`
 - `TELEGRAM_AUTH_ENABLED=true`

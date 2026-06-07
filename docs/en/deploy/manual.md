@@ -29,7 +29,7 @@ git clone https://github.com/NexaCard/admin.git admin
 ```bash
 cd api
 go mod tidy
-go build -o dujiao-api ./cmd/server
+go build -o nexacard-api ./cmd/server
 ```
 ### 2.2 Configuration File
 
@@ -56,7 +56,7 @@ go run ./cmd/seed
 ### 2.4 Running the API
 
 ```bash
-./dujiao-api
+./nexacard-api
 ```
 Default listening: `http://0.0.0.0:8080`
 
@@ -72,9 +72,9 @@ When the `admins` table in the database is empty, the system will attempt to cre
 Notes:
 
 - You can override the default values by setting environment variables before starting the API:
-  - `DJ_DEFAULT_ADMIN_USERNAME`
-  - `DJ_DEFAULT_ADMIN_PASSWORD`
-- If `server.mode=release` and `DJ_DEFAULT_ADMIN_PASSWORD` is not set, the system will skip default admin initialization (it will not automatically create `admin/admin123`).
+  - `NEXACARD_DEFAULT_ADMIN_USERNAME`
+  - `NEXACARD_DEFAULT_ADMIN_PASSWORD`
+- If `server.mode=release` and `NEXACARD_DEFAULT_ADMIN_PASSWORD` is not set, the system will skip default admin initialization (it will not automatically create `admin/admin123`).
 
 ## 3. User Frontend Deployment
 

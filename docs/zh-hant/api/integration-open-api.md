@@ -1,4 +1,4 @@
----
+﻿---
 outline: deep
 ---
 
@@ -795,7 +795,7 @@ print(api_request("POST", "/api/v1/upstream/orders", {
 
 ```php
 <?php
-function dujiaoSign(string $secret, string $method, string $path, int $timestamp, string $body): string {
+function nexacardSign(string $secret, string $method, string $path, int $timestamp, string $body): string {
     $bodyMD5 = md5($body);
     $signString = "{$method}\n{$path}\n{$timestamp}\n{$bodyMD5}";
     return hash_hmac('sha256', $signString, $secret);
@@ -809,7 +809,7 @@ $method = 'POST';
 $path = '/api/v1/upstream/orders';
 $body = json_encode(['sku_id' => 1, 'quantity' => 1, 'downstream_order_no' => 'A-001']);
 $timestamp = time();
-$signature = dujiaoSign($apiSecret, $method, $path, $timestamp, $body);
+$signature = nexacardSign($apiSecret, $method, $path, $timestamp, $body);
 
 $ch = curl_init($baseUrl . $path);
 curl_setopt_array($ch, [

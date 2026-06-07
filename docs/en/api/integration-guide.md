@@ -1,4 +1,4 @@
----
+﻿---
 outline: deep
 ---
 
@@ -76,7 +76,7 @@ Admin path: `Integration → Site Connections → Create`
 | --- | --- |
 | Connection Name | Custom name to identify the upstream site |
 | Site URL | Root URL of Site B, e.g. `https://b.example.com` |
-| Protocol | Use the default (Dujiao OpenAPI) |
+| Protocol | Use the default (NexaCard OpenAPI) |
 | API Key | API Key from Site B's user |
 | API Secret | API Secret from Site B's user |
 | Callback URL | Public URL where Site A receives callbacks |

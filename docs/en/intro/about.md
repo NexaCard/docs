@@ -64,6 +64,6 @@ NexaCard is an open source system for the "digital goods sales and delivery" sce
 - User (Frontend): https://github.com/NexaCard/user
 - Admin (Backend): https://github.com/NexaCard/admin
 - Docs (Documentation): https://github.com/NexaCard/docs
-- Community Projects: https://github.com/dujiao-next/community-projects
+- Community Projects: https://github.com/nexacard/community-projects
 
 If you would like to add features, fix issues, or improve the documentation, you are welcome to submit a PR directly.

@@ -64,7 +64,7 @@ SQLite 不支援並行寫入。解決方案：
    ```yaml
    database:
      driver: postgres
-     dsn: "host=127.0.0.1 user=dujiao password=xxx dbname=dujiao port=5432 sslmode=disable"
+     dsn: "host=127.0.0.1 user=nexacard password=xxx dbname=nexacard port=5432 sslmode=disable"
    ```
 3. 重啟服務，系統會自動建立表結構
 4. 匯入資料到 PostgreSQL

@@ -65,6 +65,6 @@ NexaCard 是一套面向「數字商品銷售與交付」場景的開源系統�
 - User（用戶前臺）：https://github.com/NexaCard/user
 - Admin（後臺）：https://github.com/NexaCard/admin
 - Docs（文檔）：https://github.com/NexaCard/docs
-- Community Projects（社群共享專案）：https://github.com/dujiao-next/community-projects
+- Community Projects（社群共享專案）：https://github.com/nexacard/community-projects
 
 如果你希望補充功能、修復問題或改進文檔，歡迎直接提交 PR。

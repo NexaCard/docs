@@ -74,7 +74,7 @@ Telegram Bot 是 NexaCard 的獨立擴充功能，用於把站點能力延伸到
 
 ## 5. 演示體驗
 
-- 演示 Bot：<https://t.me/Dujiao_NextBot>
+- 演示 Bot：<https://t.me/NexaCardBot>
 - 可直接體驗 Telegram Bot 的基礎互動能力與展示效果
 
 ## 6. 說明

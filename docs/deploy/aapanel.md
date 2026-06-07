@@ -1,4 +1,4 @@
-﻿# 使用 aaPanel 手动部署（基于 Releases 压缩包）
+# 使用 aaPanel 手动部署（基于 Releases 压缩包）
 
 > 更新时间：2026-02-27
 
@@ -41,39 +41,39 @@ cd /www/wwwroot/nexacard
 
 示例（文件名按你的实际 Release 产物替换）：
 
-> API 压缩包命名遵循 GoReleaser 规则：`dujiao-next_<tag>_Linux_x86_64.tar.gz`，例如 `dujiao-next_v1.0.0_Linux_x86_64.tar.gz`。
-> User 压缩包命名示例：`dujiao-next-user-v1.0.0.zip`。
-> Admin 压缩包命名示例：`dujiao-next-admin-v1.0.0.zip`。
+> API 压缩包命名遵循 GoReleaser 规则：`nexacard-api_<tag>_Linux_x86_64.tar.gz`，例如 `nexacard-api_v1.0.0_Linux_x86_64.tar.gz`。
+> User 压缩包命名示例：`nexacard-user-v1.0.0.zip`。
+> Admin 压缩包命名示例：`nexacard-admin-v1.0.0.zip`。
 
 ```bash
 # API
-wget -O api.tar.gz https://github.com/NexaCard/API/releases/download/v1.0.0/dujiao-next_v1.0.0_Linux_x86_64.tar.gz
+wget -O api.tar.gz https://github.com/NexaCard/API/releases/download/v1.0.0/nexacard-api_v1.0.0_Linux_x86_64.tar.gz
 mkdir -p api && tar -xzf api.tar.gz -C api
 
 # User
-wget -O user.zip https://github.com/NexaCard/user/releases/download/v1.0.0/dujiao-next-user-v1.0.0.zip
+wget -O user.zip https://github.com/NexaCard/user/releases/download/v1.0.0/nexacard-user-v1.0.0.zip
 mkdir -p user && unzip -o user.zip -d user
 
 # Admin
-wget -O admin.zip https://github.com/NexaCard/admin/releases/download/v1.0.0/dujiao-next-admin-v1.0.0.zip
+wget -O admin.zip https://github.com/NexaCard/admin/releases/download/v1.0.0/nexacard-admin-v1.0.0.zip
 mkdir -p admin && unzip -o admin.zip -d admin
 ```
 
 > API 压缩包解压后，`/www/wwwroot/nexacard/api` 目录中应包含：
 > - `config.yml.example`
-> - `dujiao-next`
+> - `nexacard`
 > - `README.md`
 
 
 ## 4. 部署 API（无需编译）
 
-确认 API 解压目录中存在以下文件：`config.yml.example`、`dujiao-next`、`README.md`。
+确认 API 解压目录中存在以下文件：`config.yml.example`、`nexacard`、`README.md`。
 
 ```bash
 cd /www/wwwroot/nexacard/api
 cp config.yml.example config.yml
 # 编辑 config.yml
-chmod +x ./dujiao-next
+chmod +x ./nexacard
 ```
 
 > ⚠️ 重要安全提醒：上线前必须修改 `config.yml` 中的 `jwt.secret` 与 `user_jwt.secret`。
@@ -84,11 +84,11 @@ chmod +x ./dujiao-next
 
 > 建议同时为该进程设置环境变量（用于初始化默认管理员，避免使用默认弱口令）：
 >
-> - `DJ_DEFAULT_ADMIN_USERNAME=admin`
-> - `DJ_DEFAULT_ADMIN_PASSWORD=<你的强密码>`
+> - `NEXACARD_DEFAULT_ADMIN_USERNAME=admin`
+> - `NEXACARD_DEFAULT_ADMIN_PASSWORD=<你的强密码>`
 
 ```bash
-/www/wwwroot/nexacard/api/dujiao-next
+/www/wwwroot/nexacard/api/nexacard
 ```
 
 工作目录设置为：
@@ -106,7 +106,7 @@ chmod +x ./dujiao-next
 
 > 强烈建议：首次登录后台后立即修改密码。
 
-如已在 PM2/Supervisor 设置 `DJ_DEFAULT_ADMIN_USERNAME` / `DJ_DEFAULT_ADMIN_PASSWORD`，则以你设置的值为准（优先级最高）。
+如已在 PM2/Supervisor 设置 `NEXACARD_DEFAULT_ADMIN_USERNAME` / `NEXACARD_DEFAULT_ADMIN_PASSWORD`，则以你设置的值为准（优先级最高）。
 
 若未设置上述环境变量，也可以在 `config.yml` 中配置：
 

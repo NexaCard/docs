@@ -1,4 +1,4 @@
-# Open Source Repositories and Contributions
+﻿# Open Source Repositories and Contributions
 
 > Last Updated: 2026-02-17  
 
@@ -8,7 +8,7 @@
 - User (Frontend): https://github.com/NexaCard/user
 - Admin (Backend): https://github.com/NexaCard/admin
 - Docs (Documentation): https://github.com/NexaCard/docs
-- Community Projects: https://github.com/dujiao-next/community-projects
+- Community Projects: https://github.com/nexacard/community-projects
 
 ## 2. Terminology
 

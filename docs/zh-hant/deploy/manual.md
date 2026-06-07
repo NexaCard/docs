@@ -30,7 +30,7 @@ git clone https://github.com/NexaCard/admin.git admin
 ```bash
 cd api
 go mod tidy
-go build -o dujiao-api ./cmd/server
+go build -o nexacard-api ./cmd/server
 ```
 
 ### 2.2 配置文件
@@ -60,7 +60,7 @@ go run ./cmd/seed
 ### 2.4 運行 API
 
 ```bash
-./dujiao-api
+./nexacard-api
 ```
 
 默認監聽：`http://0.0.0.0:8080`
@@ -77,9 +77,9 @@ go run ./cmd/seed
 說明：
 
 - 你可以在啟動 API 前設置環境變量覆蓋默認值：
-  - `DJ_DEFAULT_ADMIN_USERNAME`
-  - `DJ_DEFAULT_ADMIN_PASSWORD`
-- 若 `server.mode=release` 且未設置 `DJ_DEFAULT_ADMIN_PASSWORD`，系統會跳過默認管理員初始化（不會自動創建 `admin/admin123`）。
+  - `NEXACARD_DEFAULT_ADMIN_USERNAME`
+  - `NEXACARD_DEFAULT_ADMIN_PASSWORD`
+- 若 `server.mode=release` 且未設置 `NEXACARD_DEFAULT_ADMIN_PASSWORD`，系統會跳過默認管理員初始化（不會自動創建 `admin/admin123`）。
 
 ## 3. 用戶前臺 User 部署
 

@@ -6,9 +6,9 @@
 
 ## 仓库地址
 
-- 社区仓库：https://github.com/dujiao-next/community-projects
-- 提交 PR：https://github.com/dujiao-next/community-projects/pulls
-- 提交 Issue：https://github.com/dujiao-next/community-projects/issues
+- 社区仓库：https://github.com/nexacard/community-projects
+- 提交 PR：https://github.com/nexacard/community-projects/pulls
+- 提交 Issue：https://github.com/nexacard/community-projects/issues
 
 ## 1. 项目作用
 
@@ -39,7 +39,7 @@
 
 ## 4. 提交流程
 
-1. Fork 社区仓库（`dujiao-next/community-projects`）并创建分支
+1. Fork 社区仓库（`nexacard/community-projects`）并创建分支
 2. 在目标分类目录下新增项目目录
 3. 补齐 README、LICENSE 与必要文件
 4. 本地验证通过后提交 PR
@@ -53,7 +53,7 @@
 
 | 项目名 | 分类 | 简介 | 维护者 | 状态 |
 | --- | --- | --- | --- | --- |
-| [langge-dujiao-next-install](https://github.com/dujiao-next/community-projects/tree/main/scripts/langge-dujiao-next-install) | 脚本类 | 社区维护的一键部署与运维脚本，支持 Docker、二进制、外部环境、HTTPS、版本检查与基础运维菜单。 | LangGe | Active |
+| [langge-nexacard-install](https://github.com/nexacard/community-projects/tree/main/scripts/langge-nexacard-install) | 脚本类 | 社区维护的一键部署与运维脚本，支持 Docker、二进制、外部环境、HTTPS、版本检查与基础运维菜单。 | LangGe | Active |
 
 ## 6. 维护约定
 

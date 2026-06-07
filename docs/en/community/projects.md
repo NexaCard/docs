@@ -6,9 +6,9 @@ This page introduces the submission rules for community shared projects and list
 
 ## Repository Links
 
-- Repository: https://github.com/dujiao-next/community-projects
-- Pull Requests: https://github.com/dujiao-next/community-projects/pulls
-- Issues: https://github.com/dujiao-next/community-projects/issues
+- Repository: https://github.com/nexacard/community-projects
+- Pull Requests: https://github.com/nexacard/community-projects/pulls
+- Issues: https://github.com/nexacard/community-projects/issues
 
 ## 1. Purpose
 
@@ -39,7 +39,7 @@ Each submitted project should meet at least the following:
 
 ## 4. Submission Flow
 
-1. Fork the community repository (`dujiao-next/community-projects`) and create a branch
+1. Fork the community repository (`nexacard/community-projects`) and create a branch
 2. Add your project under the correct category directory
 3. Provide README, LICENSE, and required files
 4. Run local verification
@@ -53,7 +53,7 @@ Each submitted project should meet at least the following:
 
 | Project | Category | Summary | Maintainer | Status |
 | --- | --- | --- | --- | --- |
-| [langge-dujiao-next-install](https://github.com/dujiao-next/community-projects/tree/main/scripts/langge-dujiao-next-install) | Scripts | A community-maintained one-click deploy and ops script covering Docker, binary, external environments, HTTPS, version checks, and basic operations. | LangGe | Active |
+| [langge-nexacard-install](https://github.com/nexacard/community-projects/tree/main/scripts/langge-nexacard-install) | Scripts | A community-maintained one-click deploy and ops script covering Docker, binary, external environments, HTTPS, version checks, and basic operations. | LangGe | Active |
 
 ## 6. Maintenance Rules
 

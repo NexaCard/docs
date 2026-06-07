@@ -2,6 +2,10 @@
 
 This repository contains the official documentation site for **NexaCard**, built with **VitePress**.
 
+## Secondary Development Notice
+
+NexaCard Docs is maintained for the NexaCard secondary-development project. It uses NexaCard repositories, release links, deployment paths, and branding. See [NOTICE.md](./NOTICE.md).
+
 ## Website
 
 - GitHub (docs): https://github.com/NexaCard/docs

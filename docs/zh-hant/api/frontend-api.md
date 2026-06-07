@@ -1,4 +1,4 @@
----
+﻿---
 outline: deep
 ---
 
@@ -445,7 +445,7 @@ Authorization: Bearer <user_token>
     "languages": ["zh-CN", "zh-TW", "en-US"],
     "currency": "CNY",
     "contact": {
-      "telegram": "https://t.me/dujiaostudio",
+      "telegram": "https://t.me/nexacard",
       "whatsapp": "https://wa.me/1234567890"
     },
     "site_name": "NexaCard",
@@ -481,7 +481,7 @@ Authorization: Bearer <user_token>
     },
     "telegram_auth": {
       "enabled": true,
-      "bot_username": "dujiao_auth_bot"
+      "bot_username": "nexacard_auth_bot"
     }
   }
 }
@@ -1025,9 +1025,9 @@ Authorization: Bearer <user_token>
 ```json
 {
   "id": 123456789,
-  "first_name": "Dujiao",
+  "first_name": "Nexa",
   "last_name": "User",
-  "username": "dujiao_user",
+  "username": "nexacard_user",
   "photo_url": "https://t.me/i/userpic/320/xxx.jpg",
   "auth_date": 1739250000,
   "hash": "f1b2c3..."
@@ -1214,7 +1214,7 @@ Authorization: Bearer <user_token>
     "bound": true,
     "provider": "telegram",
     "provider_user_id": "123456789",
-    "username": "dujiao_user",
+    "username": "nexacard_user",
     "avatar_url": "https://t.me/i/userpic/320/xxx.jpg",
     "auth_at": "2026-02-20T12:00:00Z",
     "updated_at": "2026-02-20T12:00:00Z"
@@ -1273,9 +1273,9 @@ Authorization: Bearer <user_token>
 ```json
 {
   "id": 123456789,
-  "first_name": "Dujiao",
+  "first_name": "Nexa",
   "last_name": "User",
-  "username": "dujiao_user",
+  "username": "nexacard_user",
   "photo_url": "https://t.me/i/userpic/320/xxx.jpg",
   "auth_date": 1739250000,
   "hash": "f1b2c3..."
@@ -1292,7 +1292,7 @@ Authorization: Bearer <user_token>
     "bound": true,
     "provider": "telegram",
     "provider_user_id": "123456789",
-    "username": "dujiao_user",
+    "username": "nexacard_user",
     "avatar_url": "https://t.me/i/userpic/320/xxx.jpg",
     "auth_at": "2026-02-20T12:00:00Z",
     "updated_at": "2026-02-20T12:00:00Z"
@@ -2244,7 +2244,7 @@ Authorization: Bearer <user_token>
   "msg": "success",
   "data": {
     "enabled": true,
-    "bot_username": "dujiao_auth_bot",
+    "bot_username": "nexacard_auth_bot",
     "bot_token": "",
     "has_bot_token": true,
     "login_expire_seconds": 300,
@@ -2276,7 +2276,7 @@ Authorization: Bearer <user_token>
 ```json
 {
   "enabled": true,
-  "bot_username": "dujiao_auth_bot",
+  "bot_username": "nexacard_auth_bot",
   "bot_token": "123456:ABCDEF",
   "login_expire_seconds": 300,
   "replay_ttl_seconds": 300

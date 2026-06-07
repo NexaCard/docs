@@ -39,7 +39,7 @@ outline: deep
 
 ```bash
 # 停止後端服務
-systemctl stop dujiao-next
+systemctl stop nexacard
 # 或手動停止程序
 ```
 
@@ -47,7 +47,7 @@ systemctl stop dujiao-next
 
 ```bash
 # 備份資料庫（SQLite）
-cp api/db/dujiao.db api/db/dujiao.db.bak.$(date +%Y%m%d)
+cp api/db/nexacard.db api/db/nexacard.db.bak.$(date +%Y%m%d)
 
 # 備份設定
 cp api/config.yml api/config.yml.bak
@@ -59,7 +59,7 @@ cp -r api/uploads api/uploads.bak
 ### 2.3 更新程式碼
 
 ```bash
-cd dujiao-studio
+cd nexacard
 git pull origin main
 ```
 
@@ -83,7 +83,7 @@ cd admin && npm install && npm run build
 ### 2.6 啟動服務
 
 ```bash
-systemctl start dujiao-next
+systemctl start nexacard
 ```
 
 > 資料庫結構變更會在啟動時由 GORM 自動遷移完成，無需手動執行 SQL。
@@ -96,7 +96,7 @@ systemctl start dujiao-next
 
 ```bash
 # 備份資料卷
-docker compose exec api cp /app/db/dujiao.db /app/db/dujiao.db.bak
+docker compose exec api cp /app/db/nexacard.db /app/db/nexacard.db.bak
 
 # 匯出設定
 docker compose cp api:/app/config.yml ./config.yml.bak
@@ -148,10 +148,10 @@ docker compose logs -f api
 
 ```bash
 # 停止服務
-systemctl stop dujiao-next
+systemctl stop nexacard
 
 # 還原資料庫
-cp api/db/dujiao.db.bak.YYYYMMDD api/db/dujiao.db
+cp api/db/nexacard.db.bak.YYYYMMDD api/db/nexacard.db
 
 # 還原設定
 cp api/config.yml.bak api/config.yml
@@ -161,7 +161,7 @@ git checkout <舊版本tag或commit>
 
 # 重新構建並啟動
 cd api && go build ./cmd/server
-systemctl start dujiao-next
+systemctl start nexacard
 ```
 
 ### 5.2 Docker 回滾

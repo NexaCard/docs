@@ -64,7 +64,7 @@ SQLite does not support concurrent writes. Solutions:
    ```yaml
    database:
      driver: postgres
-     dsn: "host=127.0.0.1 user=dujiao password=xxx dbname=dujiao port=5432 sslmode=disable"
+     dsn: "host=127.0.0.1 user=nexacard password=xxx dbname=nexacard port=5432 sslmode=disable"
    ```
 3. Restart the service -- tables will be created automatically
 4. Import the data into PostgreSQL

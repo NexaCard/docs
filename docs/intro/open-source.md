@@ -1,4 +1,4 @@
-# 开源仓库与贡献
+﻿# 开源仓库与贡献
 
 > 更新时间：2026-02-17  
 
@@ -8,7 +8,7 @@
 - User（用户前台）：https://github.com/NexaCard/user
 - Admin（后台）：https://github.com/NexaCard/admin
 - Docs（文档）：https://github.com/NexaCard/docs
-- Community Projects（社区共享项目）：https://github.com/dujiao-next/community-projects
+- Community Projects（社区共享项目）：https://github.com/nexacard/community-projects
 
 ## 2. 术语说明
 

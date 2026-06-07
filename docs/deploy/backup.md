@@ -29,7 +29,7 @@ SQLite 数据存储在单个文件中，直接复制即可：
 
 ```bash
 # 备份
-cp api/db/dujiao.db api/db/dujiao.db.bak.$(date +%Y%m%d%H%M%S)
+cp api/db/nexacard.db api/db/nexacard.db.bak.$(date +%Y%m%d%H%M%S)
 ```
 
 > 建议在服务停止或低流量时备份，避免写入冲突。
@@ -40,20 +40,20 @@ cp api/db/dujiao.db api/db/dujiao.db.bak.$(date +%Y%m%d%H%M%S)
 
 ```bash
 # 备份整个数据库
-pg_dump -U dujiao -d dujiao -F c -f dujiao_backup_$(date +%Y%m%d).dump
+pg_dump -U nexacard -d nexacard -F c -f nexacard_backup_$(date +%Y%m%d).dump
 
 # 仅备份数据（不含结构，适合迁移）
-pg_dump -U dujiao -d dujiao --data-only -f dujiao_data_$(date +%Y%m%d).sql
+pg_dump -U nexacard -d nexacard --data-only -f nexacard_data_$(date +%Y%m%d).sql
 ```
 
 ### 2.3 Docker 环境备份
 
 ```bash
 # SQLite（直接从容器中拷贝）
-docker compose cp api:/app/db/dujiao.db ./backup/dujiao.db
+docker compose cp api:/app/db/nexacard.db ./backup/nexacard.db
 
 # PostgreSQL（使用 pg_dump）
-docker compose exec postgres pg_dump -U dujiao -d dujiao -F c -f /tmp/backup.dump
+docker compose exec postgres pg_dump -U nexacard -d nexacard -F c -f /tmp/backup.dump
 docker compose cp postgres:/tmp/backup.dump ./backup/
 ```
 
@@ -96,12 +96,12 @@ docker compose cp api:/app/uploads ./backup/uploads
 # backup.sh
 
 BACKUP_DIR="/path/to/backup/$(date +%Y%m%d)"
-APP_DIR="/path/to/dujiao-studio/api"
+APP_DIR="/path/to/nexacard/api"
 
 mkdir -p "$BACKUP_DIR"
 
 # 备份数据库（SQLite）
-cp "$APP_DIR/db/dujiao.db" "$BACKUP_DIR/dujiao.db"
+cp "$APP_DIR/db/nexacard.db" "$BACKUP_DIR/nexacard.db"
 
 # 备份配置
 cp "$APP_DIR/config.yml" "$BACKUP_DIR/config.yml"
@@ -119,7 +119,7 @@ echo "Backup completed: $BACKUP_DIR"
 
 ```bash
 # 每天凌晨 3 点执行备份
-0 3 * * * /path/to/backup.sh >> /var/log/dujiao-backup.log 2>&1
+0 3 * * * /path/to/backup.sh >> /var/log/nexacard-backup.log 2>&1
 ```
 
 ---
@@ -130,26 +130,26 @@ echo "Backup completed: $BACKUP_DIR"
 
 ```bash
 # 停止服务
-systemctl stop dujiao-next
+systemctl stop nexacard
 
 # 恢复数据库
-cp backup/dujiao.db api/db/dujiao.db
+cp backup/nexacard.db api/db/nexacard.db
 
 # 启动服务
-systemctl start dujiao-next
+systemctl start nexacard
 ```
 
 ### 6.2 恢复 PostgreSQL
 
 ```bash
 # 停止服务
-systemctl stop dujiao-next
+systemctl stop nexacard
 
 # 恢复数据库
-pg_restore -U dujiao -d dujiao -c backup/dujiao_backup.dump
+pg_restore -U nexacard -d nexacard -c backup/nexacard_backup.dump
 
 # 启动服务
-systemctl start dujiao-next
+systemctl start nexacard
 ```
 
 ### 6.3 恢复配置和上传文件

@@ -74,7 +74,7 @@ Telegram Bot is an independent NexaCard extension that extends your site capabil
 
 ## 5. Demo Experience
 
-- Demo Bot: <https://t.me/Dujiao_NextBot>
+- Demo Bot: <https://t.me/NexaCardBot>
 - You can directly experience the basic interaction capabilities and presentation of the Telegram Bot
 
 ## 6. Notes

@@ -1,4 +1,4 @@
----
+﻿---
 outline: deep
 ---
 
@@ -76,7 +76,7 @@ A 站（對接方）                    B 站（被對接方）
 | --- | --- |
 | 連線名稱 | 自訂，方便區分來源站點 |
 | 站點地址 | 填 B 站根地址，如 `https://b.example.com` |
-| 協議類型 | 使用預設值（Dujiao OpenAPI） |
+| 協議類型 | 使用預設值（NexaCard OpenAPI） |
 | API Key | B 站使用者的 API Key |
 | API Secret | B 站使用者的 API Secret |
 | 回調地址 | A 站接收回調的公網地址 |

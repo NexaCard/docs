@@ -39,7 +39,7 @@ Before upgrading, be sure to read the [Changelog](/intro/changelog) to understan
 
 ```bash
 # Stop the backend service
-systemctl stop dujiao-next
+systemctl stop nexacard
 # Or manually stop the process
 ```
 
@@ -47,7 +47,7 @@ systemctl stop dujiao-next
 
 ```bash
 # Back up the database (SQLite)
-cp api/db/dujiao.db api/db/dujiao.db.bak.$(date +%Y%m%d)
+cp api/db/nexacard.db api/db/nexacard.db.bak.$(date +%Y%m%d)
 
 # Back up the configuration
 cp api/config.yml api/config.yml.bak
@@ -59,7 +59,7 @@ cp -r api/uploads api/uploads.bak
 ### 2.3 Update the Code
 
 ```bash
-cd dujiao-studio
+cd nexacard
 git pull origin main
 ```
 
@@ -83,7 +83,7 @@ Compare with `config.yml.example` to check for new configuration options and add
 ### 2.6 Start the Service
 
 ```bash
-systemctl start dujiao-next
+systemctl start nexacard
 ```
 
 > Database schema changes are handled automatically by GORM auto-migration on startup -- no manual SQL execution is required.
@@ -96,7 +96,7 @@ systemctl start dujiao-next
 
 ```bash
 # Back up data volumes
-docker compose exec api cp /app/db/dujiao.db /app/db/dujiao.db.bak
+docker compose exec api cp /app/db/nexacard.db /app/db/nexacard.db.bak
 
 # Export configuration
 docker compose cp api:/app/config.yml ./config.yml.bak
@@ -148,10 +148,10 @@ If issues arise after upgrading:
 
 ```bash
 # Stop the service
-systemctl stop dujiao-next
+systemctl stop nexacard
 
 # Restore the database
-cp api/db/dujiao.db.bak.YYYYMMDD api/db/dujiao.db
+cp api/db/nexacard.db.bak.YYYYMMDD api/db/nexacard.db
 
 # Restore the configuration
 cp api/config.yml.bak api/config.yml
@@ -161,7 +161,7 @@ git checkout <previous-version-tag-or-commit>
 
 # Rebuild and start
 cd api && go build ./cmd/server
-systemctl start dujiao-next
+systemctl start nexacard
 ```
 
 ### 5.2 Docker Rollback

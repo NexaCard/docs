@@ -10,7 +10,7 @@
 | --- | --- | --- | --- |
 | 前台 | User Frontend | 前台 | 面向终端用户的站点（原 `web`，现统一为 `user`） |
 | 后台 | Admin Panel | 後台 | 管理员使用的管理系统（原 `admin-web`，现统一为 `admin`） |
-| 后端 / API | API Service | 後端 / API | 业务接口服务（仓库：`dujiao-next`） |
+| 后端 / API | API Service | 後端 / API | 业务接口服务（仓库：`nexacard`） |
 | 文档站 | Documentation | 文件站 | 官方文档站点（仓库：`document`） |
 | 商品 | Product | 商品 | 可售卖实体（数字或人工交付） |
 | 订单 | Order | 訂單 | 用户购买后生成的交易记录 |

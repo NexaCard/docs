@@ -1,4 +1,4 @@
-﻿# Docker Compose Deployment (Docker Hub Images)
+# Docker Compose Deployment (Docker Hub Images)
 
 > Last Updated: 2026-02-27
 
@@ -6,9 +6,9 @@ If you have not chosen a deployment method yet, start with [Deployment Overview 
 
 ## 1. Image Correspondence
 
-- API: `dujiaonext/api:tagname`
-- User (Frontend): `dujiaonext/user:tagname`
-- Admin (Backend): `dujiaonext/admin:tagname`
+- API: `nexacard/api:tagname`
+- User (Frontend): `nexacard/user:tagname`
+- Admin (Backend): `nexacard/admin:tagname`
 
 ## 2. Prepare Deployment Directory
 
@@ -49,7 +49,7 @@ You need to modify the database and Redis configuration in `./config/config.yml`
 ```yaml
 database:
   driver: sqlite
-  dsn: /app/db/dujiao.db
+  dsn: /app/db/nexacard.db
 
 redis:
   enabled: true
@@ -75,7 +75,7 @@ queue:
 ```yaml
 database:
   driver: postgres
-  dsn: host=postgres user=dujiao password=dujiao_pass dbname=dujiao_next port=5432 sslmode=disable TimeZone=Asia/Shanghai
+  dsn: host=postgres user=nexacard password=nexacard_pass dbname=nexacard port=5432 sslmode=disable TimeZone=Asia/Shanghai
 
 redis:
   enabled: true
@@ -109,16 +109,16 @@ USER_PORT=8081
 ADMIN_PORT=8082
 
 # Default admin account (only effective during first-time initialization)
-DJ_DEFAULT_ADMIN_USERNAME=admin
-DJ_DEFAULT_ADMIN_PASSWORD=admin123
+NEXACARD_DEFAULT_ADMIN_USERNAME=admin
+NEXACARD_DEFAULT_ADMIN_PASSWORD=admin123
 
 # Redis
 REDIS_PASSWORD=your-strong-redis-password
 
 # PostgreSQL (required for PostgreSQL deployment profile)
-POSTGRES_DB=dujiao_next
-POSTGRES_USER=dujiao
-POSTGRES_PASSWORD=dujiao_pass
+POSTGRES_DB=nexacard
+POSTGRES_USER=nexacard
+POSTGRES_PASSWORD=nexacard_pass
 ```
 > 🔒 **Security notice (must read): Docker bypasses the host firewall**
 >
@@ -126,7 +126,7 @@ POSTGRES_PASSWORD=dujiao_pass
 >
 > This document therefore follows two rules:
 >
-> 1. **Redis / PostgreSQL publish no ports at all** — they are reachable only through the internal `dujiao-net` network from the `api` container.
+> 1. **Redis / PostgreSQL publish no ports at all** — they are reachable only through the internal `nexacard-net` network from the `api` container.
 > 2. **API / User / Admin ports are bound to `127.0.0.1`** — reachable only from a local Nginx reverse proxy, not from the public internet.
 >
 > For ad-hoc debugging of Redis/PostgreSQL from the host, use `docker exec` into the container, or temporarily add `ports: - "127.0.0.1:6379:6379"` (which also binds only to loopback).
@@ -139,7 +139,7 @@ POSTGRES_PASSWORD=dujiao_pass
 services:
   redis:
     image: redis:7-alpine
-    container_name: dujiaonext-redis
+    container_name: nexacard-redis
     restart: unless-stopped
     environment:
       REDIS_PASSWORD: ${REDIS_PASSWORD}
@@ -152,16 +152,16 @@ services:
       timeout: 3s
       retries: 10
     networks:
-      - dujiao-net
+      - nexacard-net
 
   api:
-    image: dujiaonext/api:${TAG}
-    container_name: dujiaonext-api
+    image: nexacard/api:${TAG}
+    container_name: nexacard-api
     restart: unless-stopped
     environment:
       TZ: ${TZ}
-      DJ_DEFAULT_ADMIN_USERNAME: ${DJ_DEFAULT_ADMIN_USERNAME}
-      DJ_DEFAULT_ADMIN_PASSWORD: ${DJ_DEFAULT_ADMIN_PASSWORD}
+      NEXACARD_DEFAULT_ADMIN_USERNAME: ${NEXACARD_DEFAULT_ADMIN_USERNAME}
+      NEXACARD_DEFAULT_ADMIN_PASSWORD: ${NEXACARD_DEFAULT_ADMIN_PASSWORD}
     ports:
       - "127.0.0.1:${API_PORT}:8080"
     volumes:
@@ -178,11 +178,11 @@ services:
       timeout: 3s
       retries: 10
     networks:
-      - dujiao-net
+      - nexacard-net
 
   user:
-    image: dujiaonext/user:${TAG}
-    container_name: dujiaonext-user
+    image: nexacard/user:${TAG}
+    container_name: nexacard-user
     restart: unless-stopped
     environment:
       TZ: ${TZ}
@@ -192,11 +192,11 @@ services:
       api:
         condition: service_healthy
     networks:
-      - dujiao-net
+      - nexacard-net
 
   admin:
-    image: dujiaonext/admin:${TAG}
-    container_name: dujiaonext-admin
+    image: nexacard/admin:${TAG}
+    container_name: nexacard-admin
     restart: unless-stopped
     environment:
       TZ: ${TZ}
@@ -206,10 +206,10 @@ services:
       api:
         condition: service_healthy
     networks:
-      - dujiao-net
+      - nexacard-net
 
 networks:
-  dujiao-net:
+  nexacard-net:
     driver: bridge
 ```
 ## 5.2 Plan B (PostgreSQL Redis): `docker-compose.postgres.yml`
@@ -218,7 +218,7 @@ networks:
 services:
   redis:
     image: redis:7-alpine
-    container_name: dujiaonext-redis
+    container_name: nexacard-redis
     restart: unless-stopped
     environment:
       REDIS_PASSWORD: ${REDIS_PASSWORD}
@@ -231,11 +231,11 @@ services:
       timeout: 3s
       retries: 10
     networks:
-      - dujiao-net
+      - nexacard-net
 
   postgres:
     image: postgres:16-alpine
-    container_name: dujiaonext-postgres
+    container_name: nexacard-postgres
     restart: unless-stopped
     environment:
       TZ: ${TZ}
@@ -250,16 +250,16 @@ services:
       timeout: 5s
       retries: 10
     networks:
-      - dujiao-net
+      - nexacard-net
 
   api:
-    image: dujiaonext/api:${TAG}
-    container_name: dujiaonext-api
+    image: nexacard/api:${TAG}
+    container_name: nexacard-api
     restart: unless-stopped
     environment:
       TZ: ${TZ}
-      DJ_DEFAULT_ADMIN_USERNAME: ${DJ_DEFAULT_ADMIN_USERNAME}
-      DJ_DEFAULT_ADMIN_PASSWORD: ${DJ_DEFAULT_ADMIN_PASSWORD}
+      NEXACARD_DEFAULT_ADMIN_USERNAME: ${NEXACARD_DEFAULT_ADMIN_USERNAME}
+      NEXACARD_DEFAULT_ADMIN_PASSWORD: ${NEXACARD_DEFAULT_ADMIN_PASSWORD}
     ports:
       - "127.0.0.1:${API_PORT}:8080"
     volumes:
@@ -277,11 +277,11 @@ services:
       timeout: 3s
       retries: 10
     networks:
-      - dujiao-net
+      - nexacard-net
 
   user:
-    image: dujiaonext/user:${TAG}
-    container_name: dujiaonext-user
+    image: nexacard/user:${TAG}
+    container_name: nexacard-user
     restart: unless-stopped
     environment:
       TZ: ${TZ}
@@ -291,11 +291,11 @@ services:
       api:
         condition: service_healthy
     networks:
-      - dujiao-net
+      - nexacard-net
 
   admin:
-    image: dujiaonext/admin:${TAG}
-    container_name: dujiaonext-admin
+    image: nexacard/admin:${TAG}
+    container_name: nexacard-admin
     restart: unless-stopped
     environment:
       TZ: ${TZ}
@@ -305,10 +305,10 @@ services:
       api:
         condition: service_healthy
     networks:
-      - dujiao-net
+      - nexacard-net
 
 networks:
-  dujiao-net:
+  nexacard-net:
     driver: bridge
 ```
 ## 6. Outer Nginx Reverse Proxy (Required)
@@ -438,8 +438,8 @@ When the `admins` table in the database is empty and the API is started for the 
 
 If you want to use a custom admin account during deployment, modify the following in your `.env` file:
 
-- `DJ_DEFAULT_ADMIN_USERNAME`
-- `DJ_DEFAULT_ADMIN_PASSWORD`
+- `NEXACARD_DEFAULT_ADMIN_USERNAME`
+- `NEXACARD_DEFAULT_ADMIN_PASSWORD`
 
 And ensure that the `api` service in your compose file has these environment variables injected.
 
